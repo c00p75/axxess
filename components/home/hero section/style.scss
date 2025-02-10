@@ -1,0 +1,92 @@
+.wrapper{
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: content-box;
+}
+.mask{
+    height: 100vh;
+    overflow: hidden;
+    
+}
+.column{
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    transform: translateY(-100vh);
+}
+
+.left{
+    width: 35%;
+}
+.right{
+    width: 65%;
+
+}
+.content{
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-size: 100vw auto;
+    background-position: left;
+}
+.content h2{
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+}
+.content p{
+    font-size: 18px;
+    color: white;
+}
+.content a{
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.pic{
+    width: 100%;
+    height: 100%;
+    background-size: 100vw auto;
+    background-position: right;
+}
+
+// .right .blue,
+// .content.blue{
+//     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/mountain-3948461_1920.jpg?raw=true);
+// }
+// .right .red,
+// .content.red{
+//     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/29970171536_191e725da1_k.jpg?raw=true);
+// }
+// .right .gold,
+// .content.gold{
+//     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/johnny-mcclung-uYTKzVp8loQ-unsplash.jpg?raw=true);
+// }
+
+.left.next{
+    transform: translateY(-200vh);
+    transition: all 0.5s ease-in;
+}
+.right.next{
+    transform: translateY(0vh);
+    transition: all 0.5s ease-in;
+    
+}
+.left.prev{
+    transform: translateY(0vh);
+    transition: all 0.5s ease-in;
+}
+.right.prev{
+    transform: translateY(-200vh);
+    transition: all 0.5s ease-in;
+    
+}
