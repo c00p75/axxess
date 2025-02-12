@@ -1,7 +1,7 @@
 "use client";
 
 import "./style.scss";
-import logo from "@/public/Axxess-Corporate-Consulting-Limited-Logos-8.png";
+import logo from "@/public/logos/logo-sm.png";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -42,7 +42,7 @@ const Navbar = () => {
             src={logo}
             alt="Logo"
             quality={100}
-            className="h-10 md:h-16 w-auto nav-logo"
+            className="h-10 w-auto nav-logo"
             width={5}
             height={5}
           />
@@ -73,7 +73,7 @@ const Navbar = () => {
           id="nav-menu"
           className={`order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : ""}`}
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav font-medium gap-10">
             {main.map((menu, i) => (
               <div key={`menu-${i}`}>
                 {menu.hasChildren ? (

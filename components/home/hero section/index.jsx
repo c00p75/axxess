@@ -78,7 +78,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="home-sections relative">
+    <section className="home-sections relative p-0">
       <div className="mask">
         <div className="wrapper">
           {/* Left Column */}
@@ -89,7 +89,7 @@ const HeroSection = () => {
                 className="content text-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
-                <h2>{slide.tagline}</h2>
+                <h1 className="text-7xl text-white">{slide.tagline}</h1>
                 <p className="mb-7">{slide.text}</p>
                 <Link href={slide.link}>{slide.link_lable}</Link>
               </div>

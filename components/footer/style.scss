@@ -1,0 +1,24 @@
+.footer-section {
+  padding: 5rem 5rem;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', 'Cinzel', Courier, monospace;
+  }
+
+  .footer-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #936133;
+  }
+}

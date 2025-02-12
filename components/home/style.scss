@@ -1,32 +1,27 @@
 .home-section {
-  background: papayawhip;
   animation: animate-hero-bg 10s ease-in-out infinite;
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
 }
 
 .hero-img {
-  animation: animate-hero-img 10s ease-in-out infinite;
+  animation: animate-hero-img 8s ease-in-out infinite;
 }
 
 @keyframes animate-hero-img {
   0%,
-  100% {
+  40% {
+    filter: sepia(0);
+  }
+
+  40%,
+  60% {
     filter: sepia(1);
   }
-  50% {
+  60%,
+  100% {
     filter: sepia(0);
   }
 }
 
-@keyframes animate-hero-bg {
-  0%,
-  100% {
-    background: papayawhip;
-  }
-  50% {
-    background: whitesmoke;
-  }
-}
 
 // .box {
 //   position: relative;
