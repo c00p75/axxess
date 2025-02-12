@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import "./style.scss";
 import Link from "next/link";
 import bg1 from "@/public/backgrounds/handshake.jpg";
-import bg2 from "@/public/backgrounds/handshake.jpg";
-import bg3 from "@/public/backgrounds/handshake.jpg";
+import bg2 from "@/public/backgrounds/9.jpg";
+import bg3 from "@/public/backgrounds/3.png";
 
 const HeroSection = () => {
   const leftColumnRef = useRef(null);
