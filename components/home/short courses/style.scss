@@ -13,6 +13,18 @@
     margin: 4rem 5vw;
     padding: 0;
     list-style-type: none;
+    @media(width <= 576px){
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center; 
+
+      li {
+        flex: 1 1 300px; 
+        max-width: 100%;
+        display: flex; 
+        justify-content: center; 
+    }
+    }
   }
   
   .card {
@@ -24,6 +36,10 @@
     text-decoration: none;
     height: 22rem;
     box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.3);
+    @media(width <= 576px){
+      width: 100%;                    /* Ensures the card fills the li */
+      max-width: 350px;               /* Prevents cards from stretching too wide */
+    }
   }
   
   .card__image {      
