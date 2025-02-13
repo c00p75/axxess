@@ -32,12 +32,10 @@ const Navbar = () => {
   // states declaration
   const [navOpen, setNavOpen] = useState(false);
 
-  const { enable, label, link } = config.nav_button;
-
   return (
-    <header className="header">
-      <nav className={`navbar container ${isScrolled ? 'nav-scrolled' : ''}`}>
-        <div className="order-0">
+    <header className="header flex-center">
+      <nav className={`navbar container ${isScrolled ? 'nav-scrolled' : ''} ${navOpen ? 'py-5 md:py-1' : ''}`}>
+        <div className="w-[80%] md:w-fit order-0">
           <Image
             src={logo}
             alt="Logo"
@@ -71,9 +69,9 @@ const Navbar = () => {
 
         <div
           id="nav-menu"
-          className={`order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : ""}`}
+          className={`w-screen md:w-fit order-3 md:order-1 ${navOpen ? "max-h-[1000px]" : ""}`}
         >
-          <ul className="navbar-nav font-medium gap-10">
+          <ul className={`navbar-nav font-medium gap-10 ${navOpen ? "w-full h-fit" : "w-0 md:w-auto h-0 md:h-auto"}`}>
             {main.map((menu, i) => (
               <div key={`menu-${i}`}>
                 {menu.hasChildren ? (
@@ -83,19 +81,7 @@ const Navbar = () => {
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
-                    </span>
-                    <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
-                      {menu.children.map((child, i) => (
-                        <li className="nav-dropdown-item" key={`children-${i}`}>
-                          <Link
-                            href={child.url}
-                            className="nav-dropdown-link block"
-                          >
-                            {child.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    </span>                    
                   </li>
                 ) : (
                   <li className="nav-item">
@@ -111,27 +97,9 @@ const Navbar = () => {
                   </li>
                 )}
               </div>
-            ))}
-            {enable && (
-              <li className="md:hidden">
-                <Link
-                  className="btn btn-primary z-0 py-[14px]"
-                  href={link}
-                  rel=""
-                >
-                  {label}
-                </Link>
-              </li>
-            )}
+            ))}            
           </ul>
-        </div>
-        {enable && (
-          <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
-            <Link className="btn btn-primary z-0 py-[14px]" href={link} rel="">
-              {label}
-            </Link>
-          </div>
-        )}
+        </div>        
       </nav>
     </header>
   );

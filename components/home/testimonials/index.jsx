@@ -38,7 +38,7 @@ const Testimonials = () => {
         <section className="bg-white py-12 testimonial">
 					<div className="container mx-auto px-6 lg:px-12 pt-10">
 						<div className="flex flex-col lg:flex-row items-center justify-around">                    
-							<div className="lg:flex flex-col space-y-4 w-full flex-[2] testimonial-container">
+							<div className="hidden lg:flex flex-col space-y-4 w-full flex-[2] testimonial-container">
 								{testimonials.map((testimonial, index) => (
 									<button
 										key={index}

@@ -1,6 +1,11 @@
 .header {
   padding: 2% 10%;
-  position: fixed;
+
+  @media(width <= 768px) {
+    padding: 2% 1%;
+  }
+
+  position: fixed !important;
   background: transparent;
   width: 100vw;
   z-index: 99;
@@ -15,19 +20,35 @@
   transition: all 0.3s ease-in-out;
   border: 5px solid rgba(255, 255, 255, 0.5); 
   background:rgba(214, 182, 124, 0.549);
-  backdrop-filter: blur(15px);   
+  backdrop-filter: blur(15px);  
+  flex-wrap: wrap;
+  @media(width <= 768px) {      
+    justify-content: space-between;
+    padding-inline: 2rem;
+    
+  } 
 }
 
 .nav-scrolled {
   background: #d3ba8d;
-
   border: 5px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-nav {
   display: flex;
-  height: 100%;
+
+  @media(width <= 768px) {      
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+  } 
 }
 
 .nav-link-active {

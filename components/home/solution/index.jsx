@@ -7,14 +7,14 @@ import OurServices from "../our services";
 const Solution = () => {
   return (
     <section className="home-section relative px-0 bg-gradient-to-b from-[whitesmoke] to-[lightyellow]">
-        <div className="pt-20 flex items-center gap-5 mb-10 min-h-[27rem] px-[2rem]">
-          <div className="w-[70%] flex flex-col p-[2rem] bg-[] min-h-[25rem] rounded-xl text-[#936133]">
+        <div className="pt-0 md:pt-20 flex flex-col md:flex-row items-center gap-5 mb-10 min-h-[27rem] md:px-[2rem]">
+          <div className="md:w-[70%] flex flex-col py-[2rem] px-3 md:px-[2rem] bg-[] min-h-[25rem] rounded-xl text-[#936133]">
             <h1>Leading Corporate Governance and Board Support Experts in Zambia</h1>
             <p className="text-left w-full">
               At Axxess Corporate Consulting Limited, we specialize in providing world-class corporate governance solutions, board support services, and company secretarial expertise to businesses in Zambia and beyond. With a team of seasoned professionals, we help organizations enhance their corporate governance frameworks, ensuring compliance, efficiency, and sustainability.
             </p>
           </div>
-          <div className="relative w-[30%] h-[25rem] bg-gradient-to-br from-[#c2ad93] to-[#9a7959] rounded-xl flex-center">
+          <div className="relative mx-1 md:mx-0 md:w-[30%] h-[25rem] bg-gradient-to-br from-[#c2ad93] to-[#9a7959] rounded-xl flex-center">
             <Image
               src={Bulb}
               alt="Logo"
@@ -23,43 +23,52 @@ const Solution = () => {
             />
 
             <div className="absolute top-5 left-5 text-white w-[30%]">
-              <h2 className="font-bold text-7xl">150+</h2>
-              <p className="text-base">corporate governance training sessions</p>
+              <h2 className="font-bold text-6xl md:text-7xl">150+</h2>
+              <p className="text-sm md:text-base">corporate governance training sessions</p>
             </div>
 
 
             <div className="absolute top-5 right-5 text-white w-[25%] text-right">
-              <h2 className="font-bold text-7xl">10+</h2>
-              <p className="text-base">years of combined experience</p>
+              <h2 className="font-bold text-6xl md:text-7xl">10+</h2>
+              <p className="text-sm md:text-base">years of combined experience</p>
             </div>   
 
 
             <div className="absolute bottom-5 left-5 text-white w-[25%]">
-              <h2 className="font-bold text-7xl">20+</h2>
-              <p className="text-base">Organizations supported</p>
+              <h2 className="font-bold text-6xl md:text-7xl">20+</h2>
+              <p className="text-sm md:text-base">Organizations supported</p>
             </div>
 
 
-            <div className="absolute bottom-5 right-5 text-white w-[25%]">
-              <h2 className="font-bold text-7xl">50+</h2>
-              <p className="text-base">Women mentored and trained</p>
+            <div className="absolute bottom-5 right-5 text-white w-[25%] text-right">
+              <h2 className="font-bold text-6xl md:text-7xl">50+</h2>
+              <p className="text-sm md:text-base">Women mentored and trained</p>
             </div>            
           </div>
         </div>
 
-        <div className="flex mt-20  bg-gradient-to-br from-[#d3ba8d] to-[transparent] py-20 pb-32 ">
-          <div className="flex-[4] px-20">
+        <div className="flex mt-20 bg-gradient-to-br from-[#d3ba8d] to-[transparent] py-20 pb-32 flex-col md:flex-row px-3 md:px-0">
+          <div className="hidden md:flex flex-[4] px-20">
             <Image
                 src={img2}
                 alt="axxess"
                 quality={100}
-                className="h-full w-auto rounded-2xl object-cover object-right"
+                className="h-auto w-auto md:h-full md:w-full rounded-2xl object-cover object-right"
               />
           </div>
-          <div className="flex-[6] relative">
+          <div className="flex-1 md:flex-[6] relative">
             <div>
               <h1>Who We Are</h1>
               <p>Founded in 2015, Axxess Corporate Consulting Limited is built on a foundation of excellence, professionalism, and passion for corporate governance. Our team of highly experienced consultants brings decades of industry expertise in legal advisory, board governance, compliance, and company secretarial services. We are dedicated to fostering ethical leadership and governance best practices to strengthen organizations.</p>
+            </div>
+
+            <div className="mt-5 md:hidden">
+              <Image
+                  src={img2}
+                  alt="axxess"
+                  quality={100}
+                  className="h-auto w-auto md:h-full md:w-full rounded-2xl object-cover object-right"
+                />
             </div>
 
             <div className="mt-16">

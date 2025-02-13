@@ -7,9 +7,9 @@ import { CircleArrowRight } from 'lucide-react';
 
 const ShortCourses = () => {
   return (
-    <section id='course-container' className='-mt-10'>
+    <section id='course-container' className='mt-24 md:-mt-10'>
 			<h1 className='text-center text-[#5f3209]'>Customized Training / Short Courses</h1>
-			<div className='my-20'>
+			<div className='my-0 md:my-20'>
 				<ul className="cards">
 					<li>
 						<div href="" className="card">
@@ -101,7 +101,7 @@ const ShortCourses = () => {
 				</ul>
 			</div>
 
-			<div className='flex-center my-28'>
+			<div className='flex-center md:my-28 mb-20 md:mb-28'>
 				<button className='flex items-center w-fit text-xl gap-5 bg-[#936133] text-white px-5 py-3 rounded-full '>
 					<span>View all courses</span>
 					<CircleArrowRight color="#936133" fill='white' strokeWidth={1.5} className='h-10 w-10' />

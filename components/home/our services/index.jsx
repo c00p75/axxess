@@ -23,48 +23,50 @@ const OurServices = () => {
   const scrollWrapperRef = useRef(null);
 
   useEffect(() => {
-    // Register the ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
+    
+    let screen = gsap.matchMedia();
 
-    // Create the horizontal scroll animation
-    gsap.to('.carousel', {
-      scrollTrigger: {
-        trigger: '.our-services',
-        pin: true,
-        scrub: true,
-        start: 'top-=150vh top',
-        onUpdate: (self) => {          
-          const scrollPercent = self.progress * 100; // Get scroll percentage
-          console.log(scrollPercent)
-          if (scrollPercent < 20) {
-            divRef1.current.click();          
-          } else if (scrollPercent < 40) {
-            divRef2.current.click();          
-          } else if (scrollPercent < 60) {
-            divRef3.current.click();          
-          } else if (scrollPercent < 80) {
-            divRef4.current.click();          
-          } else if (scrollPercent < 100) {
-            divRef5.current.click();          
-        }},
-        onLeave: () => {console.log('left');  divRef5.current.click();},      
-      },
-    });
+    screen.add("(min-width: 768px)", () => {
+      gsap.to('.carousel', {
+        scrollTrigger: {
+          trigger: '.our-services',
+          pin: true,
+          scrub: true,
+          start: 'top-=150vh top',
+          onUpdate: (self) => {          
+            const scrollPercent = self.progress * 100; // Get scroll percentage
+            console.log(scrollPercent)
+            if (scrollPercent < 20) {
+              divRef1.current.click();          
+            } else if (scrollPercent < 40) {
+              divRef2.current.click();          
+            } else if (scrollPercent < 60) {
+              divRef3.current.click();          
+            } else if (scrollPercent < 80) {
+              divRef4.current.click();          
+            } else if (scrollPercent < 100) {
+              divRef5.current.click();          
+          }},
+          onLeave: () => {console.log('left');  divRef5.current.click();},      
+        },
+      });
+    })
   }, []);
   
 
   return (
-    <div className='h-[100vh]  our-services'> 
-      <div className="carousel bg-gradient-to-bl bg-[#936133] py-24">
+    <div className='h-[100vh] our-services'> 
+      <div className="carousel bg-gradient-to-bl bg-[#936133] md:py-24">
       <div className='absolute left-0 top-0 w-1/2 h-full bg-[wheat] flex-center px-10'>
         <Image
           src={logo}
           alt="axxess"
           quality={100}
-          className="w-full h-auto"
+          className="h-auto w-[100vw] md:w-full absolute left-1/2 md:left-0 md:relative"
         />
       </div>
-        <h1 className='px-16 absolute right-[0] top-[30%] text-7xl text-white'>
+        <h1 className='px-16 absolute right-[0] top-[10%] md:top-[30%] text-6xl md:text-7xl text-[#391e06] md:text-white text-center md:text-right'>
           Our Services
         </h1>  
         <div className="carousel-item" ref={divRef1}>

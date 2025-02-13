@@ -21,6 +21,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  border: 1px dotted red;
+}
+
 body {
   color: #75471c;
   background: #ebe1bc;
@@ -53,6 +57,13 @@ h1 { font-size: 3rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 h4, h5 { font-size: 1.125rem; }
+
+@media(width <= 768px) {      
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4, h5 { font-size: 1.125rem; }
+} 
 
 .flex-center {
   display: flex;

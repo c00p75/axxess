@@ -6,6 +6,7 @@ import Link from "next/link";
 import bg1 from "@/public/backgrounds/handshake.jpg";
 import bg2 from "@/public/backgrounds/9.jpg";
 import bg3 from "@/public/backgrounds/3.png";
+import Image from "next/image";
 
 const HeroSection = () => {
   const leftColumnRef = useRef(null);
@@ -79,6 +80,7 @@ const HeroSection = () => {
 
   return (
     <section className="home-sections relative p-0">
+      <Image src={bg2} fill className="blur-sm object-cover" alt="axxess"/>
       <div className="mask">
         <div className="wrapper">
           {/* Left Column */}
@@ -89,9 +91,10 @@ const HeroSection = () => {
                 className="content text-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
-                <h1 className="text-7xl text-white">{slide.tagline}</h1>
-                <p className="mb-7">{slide.text}</p>
-                <Link href={slide.link}>{slide.link_lable}</Link>
+                <div className="absolute h-screen w-screen blur-3xl bg-black/50 md:hidden z-[1]" />
+                <h1 className="text-5xl md:text-7xl text-white z-[2]">{slide.tagline}</h1>
+                <p className="mb-7 z-[2]">{slide.text}</p>
+                <Link href={slide.link} className="z-[2]">{slide.link_lable}</Link>
               </div>
             ))}
           </div>
