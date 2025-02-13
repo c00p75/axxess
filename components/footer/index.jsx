@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <section className="footer-section relative min-h-min">
       <div className="footer-overlay" />
-      <div className="footer-content z-[2] flex text-white gap-5 relative">
-        <div className="w-[30%] flex flex-col gap-10 mr-10">
+      <div className="footer-content z-[2] flex flex-col md:flex-row text-white gap-10 md:gap-5 relative">
+        <div className="md:w-[30%] flex flex-col gap-10 md:mr-10">
           <Image
             src={footerLogo}
             alt="Axxess"
@@ -16,26 +16,26 @@ const Footer = () => {
             className="w-full h-auto"
           />
         </div>
-        <div className="w-[22%] flex-1 flex flex-col gap-5">
+        <div className="md:w-[22%] flex-1 flex flex-col gap-5">
           <h2>Information</h2>
           <p>About Us</p>
           <p>Privacy & Policy</p>
           <p>Terms & Conditions</p>
         </div>
 
-        <div className="w-[22%] flex-1 flex flex-col gap-5">
+        <div className="md:w-[22%] flex-1 flex flex-col items-center md:items-start gap-5">
           <h2>Our Social</h2>
           <p className="flex items-center gap-2">
-            <Linkedin strokeWidth={1} color="#807045" />
+            <Linkedin strokeWidth={1} color="palegoldenrod" />
             <span className="pt-1">LinkedIn</span>
           </p>
           <p className="flex items-center gap-2">
-            <Facebook color="#807045" strokeWidth={1} />
+            <Facebook color="palegoldenrod" strokeWidth={1} />
             <span className="py-1">Facebook</span>
           </p>
         </div>
 
-        <div className="w-[22%] flex-1 flex flex-col gap-5">
+        <div className="md:w-[22%] flex-1 flex flex-col gap-5">
           <h2>Openning Time</h2>
           <p>Mon - Fri: 08:00am - 05:00pm</p>
           <p>15 Medland Rd Rhodespark, Lusaka</p>

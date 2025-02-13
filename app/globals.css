@@ -21,9 +21,7 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
-  border: 1px dotted red;
-}
+/* * { border: 1px dotted red; } */
 
 body {
   color: #75471c;
@@ -58,8 +56,11 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 h4, h5 { font-size: 1.125rem; }
 
-@media(width <= 768px) {      
-  h1 { font-size: 2rem; }
+@media(width <= 768px) { 
+  body {
+    text-align: center;     
+  }
+  h1 { font-size: 2rem; margin-bottom: 0.5rem;}
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
   h4, h5 { font-size: 1.125rem; }

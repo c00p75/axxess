@@ -6,11 +6,11 @@ import OurServices from "../our services";
 
 const Solution = () => {
   return (
-    <section className="home-section relative px-0 bg-gradient-to-b from-[whitesmoke] to-[lightyellow]">
+    <section className="home-section relative px-0  bg-gradient-to-b from-[#f4f4e3] md:from-[whitesmoke] md:to-[lightyellow]">
         <div className="pt-0 md:pt-20 flex flex-col md:flex-row items-center gap-5 mb-10 min-h-[27rem] md:px-[2rem]">
           <div className="md:w-[70%] flex flex-col py-[2rem] px-3 md:px-[2rem] bg-[] min-h-[25rem] rounded-xl text-[#936133]">
             <h1>Leading Corporate Governance and Board Support Experts in Zambia</h1>
-            <p className="text-left w-full">
+            <p className="md:text-left w-full">
               At Axxess Corporate Consulting Limited, we specialize in providing world-class corporate governance solutions, board support services, and company secretarial expertise to businesses in Zambia and beyond. With a team of seasoned professionals, we help organizations enhance their corporate governance frameworks, ensuring compliance, efficiency, and sustainability.
             </p>
           </div>
@@ -47,7 +47,7 @@ const Solution = () => {
           </div>
         </div>
 
-        <div className="flex mt-20 bg-gradient-to-br from-[#d3ba8d] to-[transparent] py-20 pb-32 flex-col md:flex-row px-3 md:px-0">
+        <div className="flex mt-20 bg-gradient-to-br from-[#d3ba8d] to-[transparent] py-16 md:py-20 pb-24 mb:pb-32 flex-col md:flex-row px-3 md:px-0">
           <div className="hidden md:flex flex-[4] px-20">
             <Image
                 src={img2}

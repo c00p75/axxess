@@ -1,7 +1,7 @@
 .footer-section {
   width: 100vw;
   overflow: hidden;
-  padding: 5rem 5rem;
+  padding: 5rem;
   h2 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -22,5 +22,9 @@
     left: 0;
     z-index: 1;
     background: #936133;
+  }
+
+  @media(width <= 768px) {
+    padding: 5rem 1rem;
   }
 }
