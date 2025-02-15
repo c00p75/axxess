@@ -17,7 +17,7 @@ const Solution = () => {
           <div className="relative mx-1 md:mx-0 md:w-[30%] h-[25rem] bg-gradient-to-br from-[#c2ad93] to-[#9a7959] rounded-xl flex-center">
             <Image
               src={Bulb}
-              alt="Logo"
+              alt="Axxess"
               quality={100}
               className="w-[70%] h-auto hero-img scale-x-[-1] mt-20"
             />

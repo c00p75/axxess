@@ -1,14 +1,13 @@
 .header {
   padding: 2% 10%;
-
-  @media(width <= 768px) {
-    padding: 2% 1%;
-  }
-
   position: fixed !important;
   background: transparent;
   width: 100vw;
   z-index: 99;
+
+  @media(width <= 768px) {
+    padding: 2% 1%;
+  } 
 }
 
 .navbar {
@@ -17,7 +16,8 @@
   justify-content: space-around;
   transition: all 0.25s ease-in-out;
   border: 5px solid rgba(255, 255, 255, 0.5); 
-  background:rgba(214, 182, 124, 0.549);
+  background: #d3ba8d;
+  color: #5c3816;
   backdrop-filter: blur(15px);  
   flex-wrap: wrap;
   @media(width <= 768px) {      

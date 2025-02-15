@@ -13,7 +13,7 @@ const ShortCourses = () => {
 				<ul className="cards">
 					<li>
 						<div href="" className="card">
-							<Image src={secretaryTraining} className="card__image" alt="" />
+							<Image src={secretaryTraining} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
 									<svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
@@ -35,7 +35,7 @@ const ShortCourses = () => {
 
 					<li>
 						<div href="" className="card">
-							<Image src={companyWriting} className="card__image" alt="" />
+							<Image src={companyWriting} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
 									<svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
@@ -57,7 +57,7 @@ const ShortCourses = () => {
 
 					<li>
 						<div href="" className="card">
-							<Image src={secretaryTraining} className="card__image" alt="" />
+							<Image src={secretaryTraining} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
 									<svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
@@ -79,7 +79,7 @@ const ShortCourses = () => {
 
 					<li>
 						<div href="" className="card">
-							<Image src={secretary} className="card__image object-bottom" alt="" />
+							<Image src={secretary} className="card__image object-bottom" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
 									<svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 

@@ -13,8 +13,6 @@ const HeroSection = () => {
   const rightColumnRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const leftColumn = leftColumnRef.current;
     const rightColumn = rightColumnRef.current;
 
@@ -105,7 +103,7 @@ const HeroSection = () => {
               .slice()
               .reverse()
               .map((slide, index) => (
-                <div
+                <div  
                   key={index}
                   className="pic"
                   style={{ backgroundImage: `url(${slide.image})` }}

@@ -5,19 +5,18 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-  
-    &:nth-of-type(2) {
-      background: #eee;
+
+    @media(width <= 768px){
+      height: fit-content;
     }
   }
   
   .anim-container {
     position: absolute;
     display: block;
-    z-index: 2;
     width: 50%;
     color: #ebe1bc;
-    top: calc(50vh - 56px);
+    // top: calc(50vh - 56px);
   
     &.up {
       right: 0;
@@ -26,14 +25,36 @@
     &.down {
       left: 0;
     }
+
+    @media(width <= 768px){
+      position: relative;
+      background: #75471c;
+      width: 100%;
+    }
   }
   
   .box {
     height: 1.2vh;
-    width: 50vw;
+    width: 55vw;
     margin-bottom: -0.2vh;
     background: #75471c;
     display: block;
+    @media(width <= 768px){
+      display: none;
+    }
   }
   
+  .right-text {
+    opacity: 0;
+    color: #c6995c;
+  }
+
+  .svg-arrow {
+    @media(width <= 768px){
+      color: #ebe1bc !important;
+      height: 4rem;
+      width: 4rem;
+      margin-top: -1.15rem;
+    }
+  }
 }
