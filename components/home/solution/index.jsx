@@ -6,7 +6,7 @@ import OurServices from "../our services";
 
 const Solution = () => {
   return (
-    <section className="home-section relative px-0  bg-gradient-to-b from-[#f4f4e3] md:from-[whitesmoke] md:to-[lightyellow]">
+    <section className="home-section relative px-0  bg-gradient-to-b from-[#f4f4e3] md:from-[whitesmoke] md:to-transparent">
         <div className="pt-0 md:pt-20 flex flex-col md:flex-row items-center gap-5 mb-10 min-h-[27rem] md:px-[2rem]">
           <div className="md:w-[70%] flex flex-col py-[2rem] px-3 md:px-[2rem] bg-[] min-h-[25rem] rounded-xl text-[#936133]">
             <h1>Leading Corporate Governance and Board Support Experts in Zambia</h1>
@@ -47,16 +47,16 @@ const Solution = () => {
           </div>
         </div>
 
-        <div className="flex mt-20 bg-gradient-to-br from-[#d3ba8d] to-[transparent] py-16 md:py-20 pb-24 mb:pb-32 flex-col md:flex-row px-3 md:px-0">
-          <div className="hidden md:flex flex-[4] px-20">
+        <div className="flex bg-gradient-to-br from-[#faeea9] to-[transparent] pb-24 md:pb-0 flex-col md:flex-row px-3 md:px-0">
+          <div className="hidden md:flex flex-[4]">
             <Image
                 src={img2}
                 alt="axxess"
                 quality={100}
-                className="h-auto w-auto md:h-full md:w-full rounded-2xl object-cover object-right"
+                className="h-auto w-auto md:h-full md:w-full object-cover object-right"
               />
           </div>
-          <div className="flex-1 md:flex-[6] relative">
+          <div className="flex-1 md:flex-[5] relative mt-20 pb-32 md:pl-20">
             <div>
               <h1>Who We Are</h1>
               <p>Founded in 2015, Axxess Corporate Consulting Limited is built on a foundation of excellence, professionalism, and passion for corporate governance. Our team of highly experienced consultants brings decades of industry expertise in legal advisory, board governance, compliance, and company secretarial services. We are dedicated to fostering ethical leadership and governance best practices to strengthen organizations.</p>
@@ -64,11 +64,11 @@ const Solution = () => {
 
             <div className="mt-5 md:hidden">
               <Image
-                  src={img2}
-                  alt="axxess"
-                  quality={100}
-                  className="h-auto w-auto md:h-full md:w-full rounded-2xl object-cover object-right"
-                />
+                src={img2}
+                alt="axxess"
+                quality={100}
+                className="h-auto w-auto md:h-full md:w-full rounded-sm object-cover object-right"
+              />
             </div>
 
             <div className="mt-16">

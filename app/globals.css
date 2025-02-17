@@ -71,3 +71,29 @@ h4, h5 { font-size: 1.125rem; }
   justify-content: center;
   align-items: center;
 }
+
+::-webkit-scrollbar{
+  background-color: transparent;
+  /* position: absolute; */
+  right: 0;
+  top: 0;
+  width: 7px;
+  height: 100%;
+  transform-origin: center right;
+  transition: all 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+::-webkit-scrollbar:hover {
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}

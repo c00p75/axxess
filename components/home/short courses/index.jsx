@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import './style.scss'
-import secretaryTraining from "@/public/elements/secretary-training.jpg";
+import secretaryTraining from "@/public/elements/office-secretary.jpg";
 import secretary from "@/public/elements/secretary.jpg";
+import writing from "@/public/elements/writing.jpg";
 import companyWriting from "@/public/elements/research.jpg";
 import { CircleArrowRight } from 'lucide-react';
 
@@ -57,7 +58,7 @@ const ShortCourses = () => {
 
 					<li>
 						<div href="" className="card">
-							<Image src={secretaryTraining} className="card__image" alt="Axxess" />
+							<Image src={writing} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
 									<svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 

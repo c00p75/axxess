@@ -85,52 +85,52 @@ const Services = () => {
         </section>
 
         <section id="sectionPin">
-          <div className="pin-wrap" ref={pinWrapRef}>
+          <div className="pin-wrap text-left" ref={pinWrapRef}>
             
-            <div className="pl-10 pr-28 md:w-[60vw] md:min-w-[60vw] z-[1]">
+            <div className="self-start md:self-center pl-5 md:pl-10 pr-5 md:pr-28 w-[100vw] min-w-[100vw] md:w-[60vw] md:min-w-[60vw] z-[1] pt-[15vh] md:pt-0">
               <h1>Our Services</h1>
               At Axxess Corporate Consulting Limited, we provide expert corporate governance solutions tailored to support organizations in achieving excellence in leadership, compliance, and strategic oversight. Our services are designed to enhance board effectiveness, streamline governance structures, and ensure regulatory compliance for businesses across various industries in Zambia.
             </div>
 
-            <div className="bg-[#75471c] text-[#ebe1bc] px-20 pt-[22vh] flex h-full w-[100%] md:min-w-[90vw] pr-[10rem] relative">
+            <div className="bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
-                <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[40%] left-[-5rem] z-[0]" alt="Axxess" />
-                <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">1.</h1>
+                <Image src={boardGovernance} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[15rem] w-[10rem] md:h-[25rem] md:w-[20rem] top-0 md:top-[40%] left-[-5rem] z-[0]" alt="Axxess" />
+                <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] mr-1 md:mr-10">1.</h1>
                 <div className="flex flex-col z-[1]">
                   <h1>Board Governance and Effectiveness</h1>
                   <p>We help organizations build strong and effective boards by providing expert guidance on governance structures and best practices.</p>
-                  <div className="ml-5 mt-5">
+                  <div className="md:ml-5 mt-5">
                     <div className="flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Board Effectiveness Reviews</span> – Assessing board performance and identifying areas for improvement.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 md:mt-0 flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Board, Committee, and Director Evaluations</span> – Conducting structured evaluations to enhance board productivity.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Corporate Governance Training</span> – Equipping directors and executives with essential governance knowledge.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Board Succession Planning</span> – Identifying and developing future board leaders.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Board Readiness Training</span> – Preparing new board members for effective governance roles.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Drafting Board Charters and Terms of Reference</span> – Establishing clear governance frameworks.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Policy Development </span> – Crafting governance policies, including Codes of Conduct and Ethics.</p>
                     </div>
@@ -139,40 +139,103 @@ const Services = () => {
               </div>              
             </div>
 
-            <div className="px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] pr-[10rem] relative">
+            {/* Mobile */}
+            <div className="md:hidden bg-[#75471c] text-[#ebe1bc] px-5 pt-[15vh] flex h-full w-[100vw] min-w-[100vw] relative">
+              <div className="flex z-[1]">                
+                <div className="flex flex-col z-[1]">                                
+                  <div>
+                    <div className="flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Corporate Governance Training</span> – Equipping directors and executives with essential governance knowledge.</p>
+                    </div>
+
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Board Succession Planning</span> – Identifying and developing future board leaders.</p>
+                    </div>
+
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Board Readiness Training</span> – Preparing new board members for effective governance roles.</p>
+                    </div>
+
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Drafting Board Charters and Terms of Reference</span> – Establishing clear governance frameworks.</p>
+                    </div>
+
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Policy Development </span> – Crafting governance policies, including Codes of Conduct and Ethics.</p>
+                    </div>
+                  </div> 
+                </div>
+              </div>              
+            </div>
+
+            <div className="px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
-                <Image src={boardGovernance} className="contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[10%] left-[-5rem] z-[0]" alt="Axxess" />
-                <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">2.</h1>
+                <Image src={boardGovernance} className="hidden md:flex contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[10%] left-[-5rem] z-[0]" alt="Axxess" />
+                <h1 className="self-start text-[20rem] md:mt-[-10%] z-[1] mr-1 md:mr-10">2.</h1>
                 <div className="flex flex-col z-[1]">
                   <h1>Company Secretarial and Administrative Support</h1>
                   <p>We offer comprehensive company secretarial services to ensure smooth board operations and regulatory compliance.</p>
-                  <div className="ml-5 mt-5">
+                  <div className="md:ml-5 mt-5">
                     <div className="flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Company Secretarial Services</span> – Handling governance compliance and documentation.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 md:mt-0 flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Minute Taking for Board and Committee Meetings</span> – Providing accurate and professional minutes.</p>
                     </div>
 
+                    <div className="hidden md:flex gap-5 relative">
+                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Board and Committee Meeting Pack Preparation</span> – Ensuring directors receive well-organized materials.</p>
+                    </div>
+
+                    <div className="hidden md:flex gap-5 relative">
+                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Drafting Company Policies and Strategic Plans</span> – Aligning governance structures with corporate objectives.</p>
+                    </div>
+
+                    <div className="hidden md:flex gap-5 relative">
+                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Annual General Meeting (AGM) Coordination</span> – Managing the planning and execution of AGMs.</p>
+                    </div>
+
+                    <div className="hidden md:flex gap-5 relative">
+                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Filing of Statutory Returns</span> – Ensuring timely submissions to regulatory authorities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile */}
+            <div className="md:hidden px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
+              <div className="flex z-[1]">                
+                <div className="flex flex-col z-[1]">
+                  <div className="md:ml-5 mt-5"> 
                     <div className="flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Board and Committee Meeting Pack Preparation</span> – Ensuring directors receive well-organized materials.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Drafting Company Policies and Strategic Plans</span> – Aligning governance structures with corporate objectives.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Annual General Meeting (AGM) Coordination</span> – Managing the planning and execution of AGMs.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 flex gap-5 relative">
                       <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Filing of Statutory Returns</span> – Ensuring timely submissions to regulatory authorities.</p>
                     </div>
@@ -181,81 +244,103 @@ const Services = () => {
               </div>              
             </div>
 
-            <div className="bg-[#75471c] text-[#ebe1bc] px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] pr-[10rem] relative">
+            <div className="bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
-                <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[40%] left-[-5rem] z-[0]" alt="Axxess" />
-                <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">3.</h1>
+                {/* <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[40%] left-[-5rem] z-[0]" alt="Axxess" /> */}
+                <h1 className="self-start text-[20rem] md:mt-[-10%] z-[1] mr-1 md:mr-10">3.</h1>
                 <div className="flex flex-col z-[1]">
                   <h1>Training and Development</h1>
                   <p>We empower executives, board members, and professionals with the knowledge and skills needed for effective governance.</p>
-                  <div className="ml-5 mt-5">
+                  <div className="md:ml-5 mt-5">
                     <div className="flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Corporate Governance and Board Training</span> – Workshops for directors and senior management.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="mt-5 md:mt-0 flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Training in Risk Management and Compliance</span> – Equipping teams to navigate regulatory frameworks.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Financial Literacy for Boards</span> – Understanding financial statements and investment strategies.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Strategic Leadership and Ethical Governance</span> – Enhancing leadership effectiveness.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
+                    <div className="hidden md:flex gap-5 relative">
                       <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                       <p className='ml-10 text-left'><span className='font-bold'>Etiquette and Professional Conduct Training</span> – Promoting professionalism in corporate environments.</p>
                     </div>
                   </div> 
                 </div>
               </div>              
-            </div>
+            </div>   
 
-            <div className="px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] pr-[10rem] relative">
-              <div className="flex z-[1]">
-                <Image src={boardGovernance} className="contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[10%] left-[-5rem] z-[0]" alt="Axxess" />
-                <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">4.</h1>
-                <div className="flex flex-col z-[1]">
-                  <h1>ESG Training and Audits (Environment, Social, and Governance)</h1>
-                  <p>We guide organizations in integrating ESG principles into their governance structures.</p>
-                  <div className="ml-5 mt-5">
+            {/* Mobile */}
+            <div className="md:hidden bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
+              <div className="flex z-[1]">                
+                <div className="flex flex-col z-[1]">                  
+                  <div className="md:ml-5 mt-5">    
                     <div className="flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>ESG Training for Boards and Executives</span> – Understanding sustainability and corporate responsibility.</p>
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Financial Literacy for Boards</span> – Understanding financial statements and investment strategies.</p>
+                    </div>                
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Strategic Leadership and Ethical Governance</span> – Enhancing leadership effectiveness.</p>
                     </div>
 
-                    <div className="flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>ESG Audits</span> – Evaluating an organization’s impact on environmental, social, and governance factors.</p>
+                    <div className="mt-5 flex gap-5 relative">
+                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                      <p className='ml-10 text-left'><span className='font-bold'>Etiquette and Professional Conduct Training</span> – Promoting professionalism in corporate environments.</p>
                     </div>
-
-                    <div className="flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Sustainability Reporting</span> – Helping businesses meet global ESG reporting standards.</p>
-                    </div>                    
                   </div> 
                 </div>
               </div>              
-            </div>                    
+            </div>                              
           </div>
         </section>
 
-        
-        <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative">
+        <section className="px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] md:pr-[10rem] relative">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[10rem] z-[0]" alt="Axxess" />
+            <Image src={boardGovernance} className="contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-15%] left-[0] z-[0]" alt="Axxess" />
+            <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">4.</h1>
+            <div className="flex flex-col z-[1]">
+              <h1>ESG Training and Audits (Environment, Social, and Governance)</h1>
+              <p>We guide organizations in integrating ESG principles into their governance structures.</p>
+              <div className="md:ml-5 mt-5">
+                <div className="flex gap-5 relative">
+                  <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                  <p className='ml-10 text-left'><span className='font-bold'>ESG Training for Boards and Executives</span> – Understanding sustainability and corporate responsibility.</p>
+                </div>
+
+                <div className="flex gap-5 relative">
+                  <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                  <p className='ml-10 text-left'><span className='font-bold'>ESG Audits</span> – Evaluating an organization’s impact on environmental, social, and governance factors.</p>
+                </div>
+
+                <div className="flex gap-5 relative">
+                  <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                  <p className='ml-10 text-left'><span className='font-bold'>Sustainability Reporting</span> – Helping businesses meet global ESG reporting standards.</p>
+                </div>                    
+              </div> 
+            </div>
+          </div>              
+        </section>  
+
+        <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
+          <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
+            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">5.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Tailor-Made Training & Short Courses</h1>
               <p>We provide specialized courses designed to meet the unique needs of professionals and organizations.</p>
-              <div className="ml-5 mt-5">
+              <div className="md:ml-5 mt-5">
                 <div className="flex gap-5 relative">
                   <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'>A Day in the Life of a Company Secretary</p>
@@ -302,12 +387,12 @@ const Services = () => {
         
         <section className="pt-[22vh] flex h-full w-full relative service-section">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[10rem] z-[0]" alt="Axxess" />
+            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">6.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Company Formation and Business Registration</h1>
               <p>Starting a new business? We streamline the registration and compliance process for startups and established firms.</p>
-              <div className="ml-5 mt-5">
+              <div className="md:ml-5 mt-5">
                 <div className="flex gap-5 relative">
                   <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'><span className='font-bold'>Company Formation and Registration</span> – Helping you set up your business with ease.</p>
@@ -322,25 +407,26 @@ const Services = () => {
           </div>              
         </section>
 
-        <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section">
+        <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[10rem] z-[0]" alt="Axxess" />
+            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">7.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Executive and Special Occasion Services</h1>
               <p>We offer premium corporate gifting solutions for businesses and executives.</p>
-              <div className="ml-5 mt-5">
+              <div className="md:ml-5 mt-5">
                 <div className="flex gap-5 relative">
                   <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'><span className='font-bold'>Executive Gift Hampers and Baskets</span> – Thoughtfully curated gifts for corporate events and special occasions.</p>
                 </div>
               </div> 
             </div>
-          </div>              
+          </div>  
+                   
         </section> 
-
-        <Footer />            
+        <Footer />
       </div>
+       
     </div>
   );
 };

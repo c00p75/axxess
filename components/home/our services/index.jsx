@@ -6,6 +6,12 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import bg from "@/public/backgrounds/handshake.jpg";
+import bg1 from "@/public/elements/2.png";
+import bg2 from "@/public/elements/office-secretary.jpg";
+import bg3 from "@/public/elements/research.jpg";
+import bg4 from "@/public/elements/17.png";
+import bg5 from "@/public/elements/14.png";
+import bg6 from "@/public/backgrounds/handshake.jpg";
 import logo from "@/public/logos/Axxess-Corporate-Consulting-Limited-Logos-1.png";
 import './style.scss'
 
@@ -73,7 +79,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">Board Governance & Effectiveness</div>
                 <div className="num">01</div>
-                <Image src={bg} alt="Axxess" />
+                <Image src={bg1} className='object-bottom' alt="Axxess" />
             </div>
         </div>
       
@@ -81,7 +87,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">Company Secretarial Services</div>
                 <div className="num">02</div>
-                <Image src={bg} alt="Axxess" />
+                <Image src={bg2} className='brightness-60 object-bottom' alt="Axxess" />
             </div>
         </div>
       
@@ -89,12 +95,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">Training & Development</div>
                 <div className="num">03</div>
-                <Image
-                    src={bg}
-                    width={612} 
-                    height={612}
-                    alt="Axxess"
-                />
+                <Image src={bg3} className='brightness-60 object-bottom' alt="Axxess" />
             </div>
         </div>
       
@@ -102,7 +103,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">ESG Training & Audits</div>
                 <div className="num">04</div>
-                <Image src={bg} alt="Axxess"/>
+                <Image src={bg4} className='brightness-60 object-bottom' alt="Axxess"/>
             </div>
         </div>
       
@@ -110,7 +111,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">Business Formation & Registration</div>
                 <div className="num">05</div>
-                <Image src={bg} alt="Axxess"/>
+                <Image src={bg5} className='brightness-60 object-bottom' alt="Axxess"/>
             </div>
         </div> 
 
@@ -118,7 +119,7 @@ const OurServices = () => {
             <div className="carousel-box">
                 <div className="title">Business Formation & Registration</div>
                 <div className="num">05</div>
-                <Image src={bg} alt="Axxess"/>
+                <Image src={bg6} className='brightness-60 object-bottom' alt="Axxess"/>
             </div>
         </div>          
       </div>
