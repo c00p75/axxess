@@ -5,7 +5,7 @@ import "./style.scss";
 import Link from "next/link";
 import bg1 from "@/public/backgrounds/handshake.jpg";
 import bg2 from "@/public/backgrounds/9.jpg";
-import bg3 from "@/public/backgrounds/3.png";
+import bg3 from "@/public/backgrounds/3.jpeg";
 import Image from "next/image";
 
 const HeroSection = () => {

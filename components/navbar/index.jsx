@@ -58,8 +58,6 @@ const Navbar = () => {
             alt="Axxess"
             quality={100}
             className="h-10 w-auto nav-logo"
-            width={5}
-            height={5}
           />
         </div>
 

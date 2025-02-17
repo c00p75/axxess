@@ -1,5 +1,5 @@
 import Bulb from "@/public/elements/bulb-1.png";
-import img2 from "@/public/elements/male-professional.jpg";
+import img2 from "@/public/elements/male-professional.jpeg";
 import Image from "next/image";
 import { MousePointer2 } from "lucide-react";
 import OurServices from "../our services";

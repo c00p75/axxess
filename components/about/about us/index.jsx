@@ -6,8 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.scss';
 import target from "@/public/elements/target-2.png";
 import vision from "@/public/elements/vision-1.png";
-import about1 from "@/public/elements/1.png";
-import about2 from "@/public/elements/4.png";
+import about1 from "@/public/elements/1.jpeg";
+import about2 from "@/public/elements/4.jpeg";
 import Image from 'next/image';
 import { MousePointer2 } from 'lucide-react';
 

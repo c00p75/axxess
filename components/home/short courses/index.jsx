@@ -3,7 +3,7 @@ import './style.scss'
 import secretaryTraining from "@/public/elements/office-secretary.jpg";
 import secretary from "@/public/elements/secretary.jpg";
 import writing from "@/public/elements/writing.jpg";
-import companyWriting from "@/public/elements/research.jpg";
+import companyWriting from "@/public/elements/research.jpeg";
 import { CircleArrowRight } from 'lucide-react';
 
 const ShortCourses = () => {

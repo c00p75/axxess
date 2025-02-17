@@ -3,19 +3,19 @@
 import React, { useEffect, useRef } from 'react';
 import HeroSection from './hero section';
 import nair from '@/public/elements/nair2.jpeg';
-import boardroom from '@/public/elements/2.png';
+import boardroom from '@/public/elements/2.jpeg';
 import Image from 'next/image';
 import Team from './team';
 import WhyUs from './why us';
-import bg from '@/public/backgrounds/7.png';
+import bg from '@/public/backgrounds/7.jpeg';
 import './hero section/style.scss';
 import './style.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import target from "@/public/elements/target-2.png";
 import vision from "@/public/elements/vision-1.png";
-import about1 from "@/public/elements/1.png";
-import about2 from "@/public/elements/4.png";
+import about1 from "@/public/elements/1.jpeg";
+import about2 from "@/public/elements/4.jpeg";
 import { MousePointer2 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -139,7 +139,6 @@ const AboutUs = () => {
           />
           <h1 className='right-text text-center md:text-left mt-[-1px] md:mt-[20%] md:text-6xl'>Our Core Values</h1>
           <div className="ml-5 mt-5 flex flex-col gap-5">
-            {/* Core Values */}
             <div className="flex gap-5">
               <MousePointer2 strokeWidth={1.5} className="rotate-[135deg] text-transparent svg-arrow" />
               <p><span className='font-bold'>Integrity</span> – We uphold the highest ethical standards in all our engagements.</p>

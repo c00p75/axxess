@@ -1,4 +1,4 @@
-import bg from '@/public/backgrounds/7.png';
+import bg from '@/public/backgrounds/7.jpeg';
 import './style.scss'
 import Image from 'next/image';
 

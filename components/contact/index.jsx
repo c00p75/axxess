@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./style.scss";
-import bg from '@/public/backgrounds/contact.jpg';
+import bg from '@/public/backgrounds/contact.jpeg';
 import Image from "next/image";
 import { CalendarDays, Mail, MapPin, MousePointer2, PhoneCall } from "lucide-react";
 import Footer from "../footer";
