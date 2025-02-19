@@ -103,7 +103,21 @@ const Navbar = () => {
                   </li>
                       
               </div>
-            ))}            
+            ))}
+            {/* <div>               
+               <li className="nav-item">
+                 <Link
+                   href='/about-us'
+                   onClick={() => setNavOpen(false)}
+                   className={`nav-link block ${
+                     pathname === '/about-us' ? "nav-link-active" : ""
+                   }`}
+                 >
+                   About Us
+                 </Link>
+               </li>
+                   
+           </div> */}
           </ul>
         </div>        
       </nav>
