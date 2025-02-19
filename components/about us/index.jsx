@@ -26,59 +26,59 @@ const AboutUs = () => {
   const pinWrapRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-  
-    const scroller = new LocomotiveScroll({
-      el: containerRef.current,
-      smooth: true,
-    });
-  
-    scroller.on("scroll", ScrollTrigger.update);
-  
-    ScrollTrigger.scrollerProxy(containerRef.current, {
-      scrollTop(value) {
-        return arguments.length
-          ? scroller.scrollTo(value, 0, 0)
-          : scroller.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          left: 0,
-          top: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: containerRef.current.style.transform ? "transform" : "fixed",
-    });
-  
-    let pinWrapWidth = pinWrapRef.current.offsetWidth;
-    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-  
-    gsap.to(pinWrapRef.current, {
-      scrollTrigger: {
-        scroller: containerRef.current,
-        scrub: true,
-        trigger: "#sectionPin",
-        pin: true,
-        start: "top top",
-        end: pinWrapWidth,
-      },
-      x: -horizontalScrollLength,
-      ease: "none",
-    });
-  
-    ScrollTrigger.addEventListener("refresh", () => scroller.update());
-    ScrollTrigger.refresh();
-  
-    const cleanup = () => {
-      if (scroller) {
-        scroller.destroy();
-      }
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  
-    return cleanup;
+    if (typeof window !== "undefined") {
+      const scroller = new LocomotiveScroll({
+        el: containerRef.current,
+        smooth: true,
+      });
+
+      scroller.on("scroll", ScrollTrigger.update);
+
+      ScrollTrigger.scrollerProxy(containerRef.current, {
+        scrollTop(value) {
+          return arguments.length
+            ? scroller.scrollTo(value, 0, 0)
+            : scroller.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            left: 0,
+            top: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: containerRef.current.style.transform ? "transform" : "fixed",
+      });
+
+      let pinWrapWidth = pinWrapRef.current.offsetWidth;
+      let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+
+      gsap.to(pinWrapRef.current, {
+        scrollTrigger: {
+          scroller: containerRef.current,
+          scrub: true,
+          trigger: "#sectionPin",
+          pin: true,
+          start: "top top",
+          end: pinWrapWidth,
+        },
+        x: -horizontalScrollLength,
+        ease: "none",
+      });
+
+      ScrollTrigger.addEventListener("refresh", () => scroller.update());
+      ScrollTrigger.refresh();
+
+      const cleanup = () => {
+        if (scroller) {
+          scroller.destroy();
+        }
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+
+      return cleanup;
+    }
   }, []);
   
 

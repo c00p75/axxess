@@ -10,6 +10,9 @@ import bg from '@/public/backgrounds/contact.jpeg';
 import Image from "next/image";
 import { CalendarDays, Mail, MapPin, MousePointer2, PhoneCall } from "lucide-react";
 import Footer from "../footer";
+import dynamic from "next/dynamic";
+
+// const LocomotiveScroll = dynamic(() => import("locomotive-scroll"), { ssr: true });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,15 +20,33 @@ const Contact = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const scroller = new LocomotiveScroll({
-      el: containerRef.current,
-      smooth: true,
-    });
+    const loadLocomotiveScroll = async () => {
+      const { default: LocomotiveScrollLib } = await import("locomotive-scroll");
+      setLocomotiveScroll(() => LocomotiveScrollLib); // Store the imported LocomotiveScroll in state
+    };
+
+    loadLocomotiveScroll();
 
     return () => {
-      scroller.destroy();
+      // Cleanup function (if LocomotiveScroll is initialized, destroy it)
+      if (LocomotiveScroll) {
+        LocomotiveScroll.destroy();
+      }
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const scroller = new LocomotiveScroll({
+        el: containerRef.current,
+        smooth: true,
+      });
+
+      return () => {
+        scroller.destroy();
+      };
+    }
+  }, [LocomotiveScroll]);
 
   return (
     <div ref={containerRef} className="contact-page relative">
@@ -92,7 +113,7 @@ const Contact = () => {
           </div>           
         </div>  
 
-        <div className="flex-center bg-[#42270f]">
+        <div className="flex-center bg-[#42270f] relative">
           <iframe className="w-screen h-[35rem] rounded-sm" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.9278244220404!2d28.33934637494117!3d-15.434446385156807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408cf6c07dd6c7%3A0xcbd0572620d4f377!2sIngwe%20Rd%2C%20Lusaka!5e0!3m2!1sen!2szm!4v1739751419068!5m2!1sen!2szm" allowFullScreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div className="bg-[#42270f] absolute top-0 left-0 opacity-20 z-[2] h-full w-full"></div>
         </div>
