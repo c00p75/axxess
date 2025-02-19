@@ -91,7 +91,7 @@ const Navbar = () => {
               <div key={`menu-${i}`}>
                
                   <li className="nav-item">
-                    <Link
+                    <a
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
                       className={`nav-link block ${
@@ -99,7 +99,7 @@ const Navbar = () => {
                       }`}
                     >
                       {menu.name}
-                    </Link>
+                    </a>
                   </li>
                       
               </div>

@@ -13,7 +13,7 @@ const ShortCourses = () => {
 			<div className='my-0 md:my-20'>
 				<ul className="cards">
 					<li>
-						<div href="" className="card">
+						<div className="card">
 							<Image src={secretaryTraining} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
@@ -35,7 +35,7 @@ const ShortCourses = () => {
 					</li>
 
 					<li>
-						<div href="" className="card">
+						<div className="card">
 							<Image src={companyWriting} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
@@ -57,7 +57,7 @@ const ShortCourses = () => {
 					</li>
 
 					<li>
-						<div href="" className="card">
+						<div className="card">
 							<Image src={writing} className="card__image" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">
@@ -79,7 +79,7 @@ const ShortCourses = () => {
 					</li>
 
 					<li>
-						<div href="" className="card">
+						<div className="card">
 							<Image src={secretary} className="card__image object-bottom" alt="Axxess" />
 							<div className="card__overlay">
 									<div className="card__header">

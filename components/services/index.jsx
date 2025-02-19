@@ -7,6 +7,12 @@ import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./style.scss";
 import bg from '@/public/backgrounds/5.jpeg';
+import bg1 from "@/public/elements/2.jpeg";
+import bg2 from "@/public/elements/office-secretary.jpg";
+import bg3 from "@/public/elements/research.jpeg";
+import bg4 from "@/public/elements/17.jpeg";
+import bg5 from "@/public/elements/14.png";
+import bg6 from "@/public/backgrounds/handshake.jpg";
 import boardGovernance from '@/public/backgrounds/13.jpeg';
 import Image from "next/image";
 import { MousePointer2 } from "lucide-react";
@@ -84,7 +90,7 @@ const Services = () => {
           </div>
         </section>
 
-        <section id="sectionPin">
+        <section id="sectionPin" className="hidden md:block">
           <div className="pin-wrap text-left" ref={pinWrapRef}>
             
             <div className="self-start md:self-center pl-5 md:pl-10 pr-5 md:pr-28 w-[100vw] min-w-[100vw] md:w-[60vw] md:min-w-[60vw] z-[1] pt-[15vh] md:pt-0">
@@ -94,7 +100,7 @@ const Services = () => {
 
             <div className="bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
-                <Image src={boardGovernance} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[15rem] w-[10rem] md:h-[25rem] md:w-[20rem] top-0 md:top-[40%] left-[-5rem] z-[0]" alt="Axxess" />
+                <Image src={bg1} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[15rem] w-[10rem] md:h-[25rem] md:w-[20rem] top-0 md:top-[40%] left-[-5rem] z-[0]" alt="Axxess" />
                 <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] mr-1 md:mr-10">1.</h1>
                 <div className="flex flex-col z-[1]">
                   <h1>Board Governance and Effectiveness</h1>
@@ -139,43 +145,9 @@ const Services = () => {
               </div>              
             </div>
 
-            {/* Mobile */}
-            <div className="md:hidden bg-[#75471c] text-[#ebe1bc] px-5 pt-[15vh] flex h-full w-[100vw] min-w-[100vw] relative">
-              <div className="flex z-[1]">                
-                <div className="flex flex-col z-[1]">                                
-                  <div>
-                    <div className="flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Corporate Governance Training</span> – Equipping directors and executives with essential governance knowledge.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Board Succession Planning</span> – Identifying and developing future board leaders.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Board Readiness Training</span> – Preparing new board members for effective governance roles.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Drafting Board Charters and Terms of Reference</span> – Establishing clear governance frameworks.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Policy Development </span> – Crafting governance policies, including Codes of Conduct and Ethics.</p>
-                    </div>
-                  </div> 
-                </div>
-              </div>              
-            </div>
-
             <div className="px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
-                <Image src={boardGovernance} className="hidden md:flex contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[10%] left-[-5rem] z-[0]" alt="Axxess" />
+                <Image src={bg2} className="hidden md:flex absolute object-cover rounded-md h-[25rem] w-[20rem] top-[10%] left-[-5rem] z-[0]" alt="Axxess" />
                 <h1 className="self-start text-[20rem] md:mt-[-10%] z-[1] mr-1 md:mr-10">2.</h1>
                 <div className="flex flex-col z-[1]">
                   <h1>Company Secretarial and Administrative Support</h1>
@@ -215,35 +187,6 @@ const Services = () => {
               </div>
             </div>
 
-            {/* Mobile */}
-            <div className="md:hidden px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
-              <div className="flex z-[1]">                
-                <div className="flex flex-col z-[1]">
-                  <div className="md:ml-5 mt-5"> 
-                    <div className="flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Board and Committee Meeting Pack Preparation</span> – Ensuring directors receive well-organized materials.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Drafting Company Policies and Strategic Plans</span> – Aligning governance structures with corporate objectives.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Annual General Meeting (AGM) Coordination</span> – Managing the planning and execution of AGMs.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Filing of Statutory Returns</span> – Ensuring timely submissions to regulatory authorities.</p>
-                    </div>
-                  </div> 
-                </div>
-              </div>              
-            </div>
-
             <div className="bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
               <div className="flex z-[1]">
                 {/* <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[40%] left-[-5rem] z-[0]" alt="Axxess" /> */}
@@ -279,36 +222,13 @@ const Services = () => {
                   </div> 
                 </div>
               </div>              
-            </div>   
-
-            {/* Mobile */}
-            <div className="md:hidden bg-[#75471c] text-[#ebe1bc] px-5 md:px-20 pt-[15vh] md:pt-[22vh] flex h-full w-[100vw] min-w-[100vw] md:w-[100%] md:min-w-[90vw] md:pr-[10rem] relative">
-              <div className="flex z-[1]">                
-                <div className="flex flex-col z-[1]">                  
-                  <div className="md:ml-5 mt-5">    
-                    <div className="flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Financial Literacy for Boards</span> – Understanding financial statements and investment strategies.</p>
-                    </div>                
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Strategic Leadership and Ethical Governance</span> – Enhancing leadership effectiveness.</p>
-                    </div>
-
-                    <div className="mt-5 flex gap-5 relative">
-                      <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
-                      <p className='ml-10 text-left'><span className='font-bold'>Etiquette and Professional Conduct Training</span> – Promoting professionalism in corporate environments.</p>
-                    </div>
-                  </div> 
-                </div>
-              </div>              
-            </div>                              
+            </div>                                
           </div>
         </section>
 
         <section className="px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] md:pr-[10rem] relative">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="contrast-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-15%] left-[0] z-[0]" alt="Axxess" />
+            <Image src={bg4} className="absolute brightness-75 object-cover rounded-md h-[25rem] w-[20rem] top-[-15%] left-[5px] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">4.</h1>
             <div className="flex flex-col z-[1]">
               <h1>ESG Training and Audits (Environment, Social, and Governance)</h1>
@@ -335,7 +255,7 @@ const Services = () => {
 
         <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <Image src={bg3} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">5.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Tailor-Made Training & Short Courses</h1>
@@ -387,7 +307,7 @@ const Services = () => {
         
         <section className="pt-[22vh] flex h-full w-full relative service-section">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <Image src={bg5} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">6.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Company Formation and Business Registration</h1>
@@ -409,7 +329,7 @@ const Services = () => {
 
         <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
           <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={boardGovernance} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <Image src={bg6} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
             <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">7.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Executive and Special Occasion Services</h1>
