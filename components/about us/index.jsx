@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./style.scss";
 import bg from '@/public/backgrounds/7.jpeg';
@@ -27,10 +27,15 @@ const AboutUs = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const scroller = new LocomotiveScroll({
-        el: containerRef.current,
-        smooth: true,
-      });
+      let scroller;
+      (async () => {
+        const LocomotiveScrollModule = await import("locomotive-scroll");
+        const LocomotiveScroll = LocomotiveScrollModule.default;
+
+        scroller = new LocomotiveScroll({
+          el: scrollContainer,
+          smooth: true,
+        });
 
       scroller.on("scroll", ScrollTrigger.update);
 
@@ -76,7 +81,7 @@ const AboutUs = () => {
         }
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       };
-
+      })
       return cleanup;
     }
   }, []);

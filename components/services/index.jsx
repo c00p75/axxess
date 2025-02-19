@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./style.scss";
 import bg from '@/public/backgrounds/5.jpeg';
@@ -25,52 +24,60 @@ const Services = () => {
   const pinWrapRef = useRef(null);
 
   useEffect(() => {
-    const scroller = new LocomotiveScroll({
-      el: containerRef.current,
-      smooth: true,
-    });
+    if (typeof window !== "undefined") {
+      let scroller;
 
-    scroller.on("scroll", ScrollTrigger.update);
+      (async () => {
+        const LocomotiveScrollModule = await import("locomotive-scroll");
+        const LocomotiveScroll = LocomotiveScrollModule.default;
 
-    ScrollTrigger.scrollerProxy(containerRef.current, {
-      scrollTop(value) {
-        return arguments.length
-          ? scroller.scrollTo(value, 0, 0)
-          : scroller.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {
-          left: 0,
-          top: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: containerRef.current.style.transform ? "transform" : "fixed",
-    });
+        scroller = new LocomotiveScroll({
+          el: scrollContainer,
+          smooth: true,
+        });
 
-    let pinWrapWidth = pinWrapRef.current.offsetWidth;
-    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+        scroller.on("scroll", ScrollTrigger.update);
 
-    gsap.to(pinWrapRef.current, {
-      scrollTrigger: {
-        scroller: containerRef.current,
-        scrub: true,
-        trigger: "#sectionPin",
-        pin: true,
-        start: "top top",
-        end: pinWrapWidth,
-      },
-      x: -horizontalScrollLength,
-      ease: "none",
-    });
+        ScrollTrigger.scrollerProxy(containerRef.current, {
+          scrollTop(value) {
+            return arguments.length
+              ? scroller.scrollTo(value, 0, 0)
+              : scroller.scroll.instance.scroll.y;
+          },
+          getBoundingClientRect() {
+            return {
+              left: 0,
+              top: 0,
+              width: window.innerWidth,
+              height: window.innerHeight,
+            };
+          },
+          pinType: containerRef.current.style.transform ? "transform" : "fixed",
+        });
 
-    ScrollTrigger.addEventListener("refresh", () => scroller.update());
-    ScrollTrigger.refresh();
+        let pinWrapWidth = pinWrapRef.current.offsetWidth;
+        let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
-    return () => {
-      scroller.destroy();
-    };
+        gsap.to(pinWrapRef.current, {
+          scrollTrigger: {
+            scroller: containerRef.current,
+            scrub: true,
+            trigger: "#sectionPin",
+            pin: true,
+            start: "top top",
+            end: pinWrapWidth,
+          },
+          x: -horizontalScrollLength,
+          ease: "none",
+        });
+
+        ScrollTrigger.addEventListener("refresh", () => scroller.update());
+        ScrollTrigger.refresh();
+      })
+      return () => {
+        scroller.destroy();
+      };
+    }
   }, []);
 
   return (

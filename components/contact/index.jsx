@@ -1,52 +1,61 @@
 "use client"
 
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./style.scss";
 import bg from '@/public/backgrounds/contact.jpeg';
 import Image from "next/image";
 import { CalendarDays, Mail, MapPin, MousePointer2, PhoneCall } from "lucide-react";
 import Footer from "../footer";
-import dynamic from "next/dynamic";
 
-// const LocomotiveScroll = dynamic(() => import("locomotive-scroll"), { ssr: true });
-
+const LocomotiveScroll = dynamic(() => import("locomotive-scroll"), { ssr: false });
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const loadLocomotiveScroll = async () => {
-      const { default: LocomotiveScrollLib } = await import("locomotive-scroll");
-      setLocomotiveScroll(() => LocomotiveScrollLib); // Store the imported LocomotiveScroll in state
-    };
-
-    loadLocomotiveScroll();
-
-    return () => {
-      // Cleanup function (if LocomotiveScroll is initialized, destroy it)
-      if (LocomotiveScroll) {
-        LocomotiveScroll.destroy();
-      }
-    };
-  }, []);
-
-  useEffect(() => {
     if (typeof window !== "undefined") {
-      const scroller = new LocomotiveScroll({
-        el: containerRef.current,
-        smooth: true,
-      });
+      const scrollContainer = containerRef.current;
+      let scroller;
+
+      (async () => {
+        const LocomotiveScrollModule = await import("locomotive-scroll");
+        const LocomotiveScroll = LocomotiveScrollModule.default;
+
+        scroller = new LocomotiveScroll({
+          el: scrollContainer,
+          smooth: true,
+        });
+
+        // Sync with GSAP ScrollTrigger
+        scroller.on("scroll", ScrollTrigger.update);
+        ScrollTrigger.scrollerProxy(scrollContainer, {
+          scrollTop(value) {
+            return arguments.length
+              ? scroller.scrollTo(value, { duration: 0, disableLerp: true })
+              : scroller.scroll.instance.scroll.y;
+          },
+          getBoundingClientRect() {
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+          },
+        });
+
+        ScrollTrigger.addEventListener("refresh", () => scroller.update());
+        ScrollTrigger.refresh();
+      })();
 
       return () => {
-        scroller.destroy();
+        if (scroller) scroller.destroy();
       };
     }
-  }, [LocomotiveScroll]);
+  }, []);
+  
+  
 
   return (
     <div ref={containerRef} className="contact-page relative">

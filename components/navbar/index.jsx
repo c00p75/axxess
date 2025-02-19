@@ -13,15 +13,16 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 10);
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, [pathname]);
 
 
@@ -52,14 +53,14 @@ const Navbar = () => {
   return (
     <header className="header flex-center">
       <nav className={`navbar container md:py-2 ${isScrolled ? 'nav-scrolled' : ''} ${navOpen ? 'py-10 md:py-5 h-[97vh] items-start' : 'items-center rounded-[80px]'}`}>
-        <div className="w-[80%] md:w-fit order-0">
+        <a href="/" className="w-[80%] md:w-fit order-0">
           <Image
             src={logo}
             alt="Axxess"
             quality={100}
             className="h-10 w-auto nav-logo"
           />
-        </div>
+        </a>
 
         <button
           id="show-button"
