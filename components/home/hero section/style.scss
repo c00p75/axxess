@@ -103,3 +103,9 @@
     transition: all 0.5s ease-in;
     
 }
+
+.home-hero-overlay {
+    z-index: 1;
+    background: radial-gradient(#75471cef, #2d1a091b);
+    // opacity: 0.9;
+  }

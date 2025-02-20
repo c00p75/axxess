@@ -90,8 +90,8 @@ const Services = () => {
     <div id="scroll-wrap-container" className="services-page relative">      
       <div>
         <section className="overflow-hidden">
-        <Image src={bg} className='absolute object-cover object-left md:object-top right-0 w-full md:w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
-        <div className='hero-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full' />
+          <Image src={bg} className='absolute object-cover object-left md:object-top right-0 w-full md:w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
+          <div className='hero-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full' />
           <div className='text-container text-white absolute z-[2] top-0 left-0 h-full w-full md:w-[40%] flex-center'>            
             <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.5" className='text-white text-7xl px-5 md:px-0 md:text-8xl'>
               Services

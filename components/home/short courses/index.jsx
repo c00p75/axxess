@@ -102,7 +102,7 @@ const ShortCourses = () => {
 	]
 
   return (
-    <section id='course-container' className='mt-64 md:-mt-10 px-0'>
+    <section id='course-container' className='mt-64 md:mt-20 px-0'>
 			<h1 className='text-center text-[#5f3209] px-5'>Customized Training / Short Courses</h1>
 			<div className='hidden md:flex gap-6 justify-center md:justify-end md:mr-16 mt-10 mb-5'>
 				<button className='flex items-center w-fit text-xl h-20 rounded-full' onClick={() => scroll("left")}>
@@ -124,7 +124,7 @@ const ShortCourses = () => {
 										<div className="card__header-text">
 												<h3 className="card__title">{course.title}</h3>            
 												<div className='flex justify-between items-center mt-2'>
-												<a href='/contact-us' className="card__status px-2 py-1 border-2 border-[#936133] rounded-xl cursor-pointer">Enroll</a>
+												<a href='/contact-us' className="card__status px-2 py-1 border-2 border-white rounded-xl cursor-pointer">Enroll</a>
 												<div className='text-base flex gap-2'>
 													<span className='line-through'>{course.actual_price}</span>
 													<span className=''>{course.discounted_price}</span>

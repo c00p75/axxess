@@ -82,13 +82,13 @@ const HeroSection = () => {
       <div className="mask">
         <div className="wrapper">
           {/* Left Column */}
-          <div className="left column" ref={leftColumnRef}>
+          <div className="left column relative" ref={leftColumnRef}>            
             {slideContent.map((slide, index) => (
               <div
                 key={index}
                 className="content text-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
-              >
+              >                
                 <div className="absolute h-screen w-screen blur-3xl bg-black/50 md:hidden z-[1]" />
                 <h1 className="text-5xl md:text-7xl text-white z-[2]">{slide.tagline}</h1>
                 <p className="mb-7 z-[2]">{slide.text}</p>
