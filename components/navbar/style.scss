@@ -20,7 +20,8 @@
   color: #5c3816;
   backdrop-filter: blur(15px);  
   flex-wrap: wrap;
-  @media(width <= 768px) {      
+  @media(width <= 768px) {
+    transition: all 0.1s ease-in-out;
     justify-content: space-between;
     padding-inline: 2rem;
     

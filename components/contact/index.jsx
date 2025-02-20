@@ -30,6 +30,12 @@ const Contact = () => {
         scroller = new LocomotiveScroll({
           el: scrollContainer,
           smooth: true,
+          smartphone: {
+            smooth: true // Enable smooth scrolling on mobile
+          },
+          tablet: {
+            smooth: true // Enable smooth scrolling on tablets
+          }
         });
 
         // Sync with GSAP ScrollTrigger

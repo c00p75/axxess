@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <header className="header flex-center">
-      <nav className={`navbar container md:py-2 ${isScrolled ? 'nav-scrolled' : ''} ${navOpen ? 'py-10 md:py-5 h-[97vh] items-start' : 'items-center rounded-[80px]'}`}>
+      <nav className={`navbar container md:py-2 ${isScrolled ? 'nav-scrolled' : ''} ${navOpen ? 'py-10 md:py-5 h-[98vh] items-start' : 'items-center rounded-[80px]'}`}>
         <a href="/" className="w-[80%] md:w-fit order-0">
           <Image
             src={logo}

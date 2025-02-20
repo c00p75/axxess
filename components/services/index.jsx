@@ -14,7 +14,7 @@ import bg5 from "@/public/elements/14.png";
 import bg6 from "@/public/backgrounds/handshake.jpg";
 import boardGovernance from '@/public/backgrounds/13.jpeg';
 import Image from "next/image";
-import { MousePointer2 } from "lucide-react";
+import { ArrowRight, CircleArrowRight, MousePointer2 } from "lucide-react";
 import Footer from "../footer";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,6 +34,12 @@ const Services = () => {
       const scroller = new LocomotiveScroll({
         el: containerRef,
         smooth: true,
+        smartphone: {
+          smooth: true // Enable smooth scrolling on mobile
+        },
+        tablet: {
+          smooth: true // Enable smooth scrolling on tablets
+        }
       });
 
       scroller.on("scroll", ScrollTrigger.update);
@@ -84,13 +90,13 @@ const Services = () => {
     <div id="scroll-wrap-container" className="services-page relative">      
       <div className="container" >
         <section className="overflow-hidden">
-        <Image src={bg} className='absolute object-cover object-right md:object-top right-0 w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
+        <Image src={bg} className='absolute object-cover object-left md:object-top right-0 w-full md:w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
         <div className='hero-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full' />
           <div className='text-container text-white absolute z-[2] top-0 left-0 h-full w-full md:w-[40%] flex-center'>            
             <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.5" className='text-white text-7xl px-5 md:px-0 md:text-8xl'>
               Services
             </h1>   
-            <div data-scroll data-scroll-speed="2" data-scroll-delay="0.5" className='w-[5px] h-2/5 md:h-[30%] absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 rounded overflow-hidden'>
+            <div data-scroll data-scroll-speed="2" data-scroll-delay="0.5" className='w-[5px] h-[20%] md:h-[30%] absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 rounded overflow-hidden'>
               <span className='header-line h-full w-full flex bg-white rounded-full' />
             </div> 
           </div>
@@ -233,9 +239,9 @@ const Services = () => {
         </section>
 
         <section className="px-20 pt-[22vh] flex h-full w-full md:min-w-[90vw] md:pr-[10rem] relative">
-          <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={bg4} className="absolute brightness-75 object-cover rounded-md h-[25rem] w-[20rem] top-[-15%] left-[5px] z-[0]" alt="Axxess" />
-            <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">4.</h1>
+          <div className="flex z-[1] md:pt-[6rem] pl-5 md:pl-[15rem] pr-5 md:pr-[10rem]">
+            <Image src={bg4} className="hidden md:flex absolute brightness-75 object-cover rounded-md h-[25rem] w-[20rem] md:top-[-15%] md:left-[5px] z-[0]" alt="Axxess" />
+            <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] md:mr-10">4.</h1>
             <div className="flex flex-col z-[1]">
               <h1>ESG Training and Audits (Environment, Social, and Governance)</h1>
               <p>We guide organizations in integrating ESG principles into their governance structures.</p>
@@ -259,10 +265,10 @@ const Services = () => {
           </div>              
         </section>  
 
-        <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
-          <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={bg3} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
-            <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">5.</h1>
+        <section className="bg-[#75471c] text-[#ebe1bc] md:pt-[22vh] flex h-full w-full relative service-section flex-col">
+          <div className="flex z-[1] md:pt-[6rem] pl-5 md:pl-[15rem] pr-5 md:pr-[10rem]">
+            <Image src={bg3} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] md:mr-10">5.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Tailor-Made Training & Short Courses</h1>
               <p>We provide specialized courses designed to meet the unique needs of professionals and organizations.</p>
@@ -312,20 +318,20 @@ const Services = () => {
         </section>   
         
         <section className="pt-[22vh] flex h-full w-full relative service-section">
-          <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={bg5} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
-            <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">6.</h1>
+          <div className="flex z-[1] md:pt-[6rem] pl-5 md:pl-[15rem] pr-5 md:pr-[10rem]">
+            <Image src={bg5} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] md:mr-10">6.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Company Formation and Business Registration</h1>
               <p>Starting a new business? We streamline the registration and compliance process for startups and established firms.</p>
               <div className="md:ml-5 mt-5">
                 <div className="flex gap-5 relative">
-                  <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                  <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'><span className='font-bold'>Company Formation and Registration</span> – Helping you set up your business with ease.</p>
                 </div>
 
                 <div className="flex gap-5 relative">
-                  <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
+                  <MousePointer2 color="#75471c" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'><span className='font-bold'>Business Start-up Advisory</span> – Offering guidance on business structures and governance.</p>
                 </div>            
               </div> 
@@ -334,9 +340,9 @@ const Services = () => {
         </section>
 
         <section className="bg-[#75471c] text-[#ebe1bc] pt-[22vh] flex h-full w-full relative service-section flex-col">
-          <div className="flex z-[1] pt-[6rem] pl-[15rem] pr-[10rem]">
-            <Image src={bg6} className="brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
-            <h1 className="self-start text-[20rem] mt-[-10%] z-[1] md:mr-10">7.</h1>
+          <div className="flex z-[1] md:pt-[6rem] pl-5 md:pl-[15rem] pr-5 md:pr-[10rem]">
+            <Image src={bg6} className="hidden md:flex brightness-50 absolute object-cover rounded-md h-[25rem] w-[20rem] top-[-10%] left-[2rem] z-[0]" alt="Axxess" />
+            <h1 className="self-start md:text-[20rem] md:mt-[-10%] z-[1] md:mr-10">7.</h1>
             <div className="flex flex-col z-[1]">
               <h1>Executive and Special Occasion Services</h1>
               <p>We offer premium corporate gifting solutions for businesses and executives.</p>
@@ -345,10 +351,14 @@ const Services = () => {
                   <MousePointer2 color="#ebe1bc" strokeWidth={1.5} className="rotate-[135deg] h-6 w-6 absolute" />
                   <p className='ml-10 text-left'><span className='font-bold'>Executive Gift Hampers and Baskets</span> – Thoughtfully curated gifts for corporate events and special occasions.</p>
                 </div>
-              </div> 
+              </div>               
             </div>
           </div>  
-                   
+          <div className="mt-14 text-2xl flex flex-col justify-center items-center md:flex-row gap-2">
+            <span>Let&apos;s discuss how we can support your business.</span>
+            <a href="/contact-us" className="w-fit border-b flex gap-2 items-center mt-10 md:mt-0 font-bold md:font-normal md:hover:font-bold">Get in Touch <ArrowRight /></a>
+            
+          </div>
         </section> 
         <Footer />
       </div>
