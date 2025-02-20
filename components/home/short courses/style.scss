@@ -7,24 +7,27 @@
   #course-container{
 
   .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    scroll-behavior: smooth !important;
+    display: flex;
+    // overflow: hidden;
+    overflow: scroll;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 4rem 5vw;
-    padding: 0;
+    padding: 0 5vw 5vw 5vw;
     list-style-type: none;
-    @media(width <= 576px){
-      display: flex;
-      flex-wrap: wrap; 
-      justify-content: center; 
+    // @media(width <= 576px){
+    //   display: flex;
+    //   flex-wrap: wrap; 
+    //   justify-content: center; 
 
-      li {
-        flex: 1 1 300px; 
-        max-width: 100%;
-        display: flex; 
-        justify-content: center; 
-    }
-    }
+    //   li {
+    //     flex: 1 1 300px; 
+    //     max-width: 100%;
+    //     display: flex; 
+    //     justify-content: center; 
+    // }
+    // }
   }
   
   .card {
@@ -36,6 +39,7 @@
     text-decoration: none;
     height: 22rem;
     box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.3);
+    min-width: 350px;
     @media(width <= 576px){
       width: 100%;                    /* Ensures the card fills the li */
       max-width: 350px;               /* Prevents cards from stretching too wide */
@@ -125,4 +129,13 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
   }    
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

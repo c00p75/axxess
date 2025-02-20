@@ -20,60 +20,60 @@ import Footer from "../footer";
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
-  const containerRef = useRef(null);
-  const pinWrapRef = useRef(null);
 
-  useEffect(() => {
+  useEffect(async() => {
     if (typeof window !== "undefined") {
-      let scroller;
+      const LocomotiveScrollModule = await import("locomotive-scroll");
+      const LocomotiveScroll = LocomotiveScrollModule.default;
 
-      (async () => {
-        const LocomotiveScrollModule = await import("locomotive-scroll");
-        const LocomotiveScroll = LocomotiveScrollModule.default;
+      const containerRef = document.querySelector('#scroll-wrap-container');
+      const pinWrapRef = document.querySelector('#pin-wrap-ref');
 
-        scroller = new LocomotiveScroll({
-          el: scrollContainer,
-          smooth: true,
-        });
+      console.log(containerRef, pinWrapRef)
 
-        scroller.on("scroll", ScrollTrigger.update);
+      const scroller = new LocomotiveScroll({
+        el: containerRef,
+        smooth: true,
+      });
 
-        ScrollTrigger.scrollerProxy(containerRef.current, {
-          scrollTop(value) {
-            return arguments.length
-              ? scroller.scrollTo(value, 0, 0)
-              : scroller.scroll.instance.scroll.y;
-          },
-          getBoundingClientRect() {
-            return {
-              left: 0,
-              top: 0,
-              width: window.innerWidth,
-              height: window.innerHeight,
-            };
-          },
-          pinType: containerRef.current.style.transform ? "transform" : "fixed",
-        });
+      scroller.on("scroll", ScrollTrigger.update);
 
-        let pinWrapWidth = pinWrapRef.current.offsetWidth;
-        let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+      ScrollTrigger.scrollerProxy(containerRef, {
+        scrollTop(value) {
+          return arguments.length
+            ? scroller.scrollTo(value, 0, 0)
+            : scroller.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            left: 0,
+            top: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: containerRef.style.transform ? "transform" : "fixed",
+      });
 
-        gsap.to(pinWrapRef.current, {
-          scrollTrigger: {
-            scroller: containerRef.current,
-            scrub: true,
-            trigger: "#sectionPin",
-            pin: true,
-            start: "top top",
-            end: pinWrapWidth,
-          },
-          x: -horizontalScrollLength,
-          ease: "none",
-        });
+      let pinWrapWidth = pinWrapRef.offsetWidth;
+      let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
-        ScrollTrigger.addEventListener("refresh", () => scroller.update());
-        ScrollTrigger.refresh();
-      })
+      gsap.to(pinWrapRef, {
+        scrollTrigger: {
+          scroller: containerRef,
+          scrub: true,
+          trigger: "#sectionPin",
+          pin: true,
+          start: "top top",
+          end: pinWrapWidth,
+        },
+        x: -horizontalScrollLength,
+        ease: "none",
+      });
+
+      ScrollTrigger.addEventListener("refresh", () => scroller.update());
+      ScrollTrigger.refresh();
+
       return () => {
         scroller.destroy();
       };
@@ -81,8 +81,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="services-page relative">
-      
+    <div id="scroll-wrap-container" className="services-page relative">      
       <div className="container" >
         <section className="overflow-hidden">
         <Image src={bg} className='absolute object-cover object-right md:object-top right-0 w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
@@ -98,7 +97,7 @@ const Services = () => {
         </section>
 
         <section id="sectionPin" className="hidden md:block">
-          <div className="pin-wrap text-left" ref={pinWrapRef}>
+          <div className="pin-wrap text-left" id="pin-wrap-ref">
             
             <div className="self-start md:self-center pl-5 md:pl-10 pr-5 md:pr-28 w-[100vw] min-w-[100vw] md:w-[60vw] md:min-w-[60vw] z-[1] pt-[15vh] md:pt-0">
               <h1>Our Services</h1>
