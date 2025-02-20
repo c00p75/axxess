@@ -31,10 +31,10 @@ const Contact = () => {
           el: scrollContainer,
           smooth: true,
           smartphone: {
-            smooth: true // Enable smooth scrolling on mobile
+            smooth: true
           },
           tablet: {
-            smooth: true // Enable smooth scrolling on tablets
+            smooth: true
           }
         });
 
@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <div ref={containerRef} className="contact-page relative">
       
-      <div className="container" >
+      <div>
         <section className="overflow-hidden">
           <Image src={bg} className='contact-hero-img absolute object-cover md:object-top right-0 md:w-[60%] h-[100vh] scale-x-[-1]' alt="Axxess" />
           <div className='hero-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full' />

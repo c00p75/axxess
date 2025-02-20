@@ -94,7 +94,7 @@ const AboutUs = () => {
 
   return (
     <div id='scroll-wrap-container' className="about-us-page relative">      
-      <div className="container" >
+      <div>
         <section className="overflow-hidden">
         <Image src={bg} className='absolute object-cover object-left md:object-top left-0 w-full md:w-[80%] h-[100vh] scale-x-[-1]' alt="Axxess" />
         <div className='hero-overlay absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full' />
