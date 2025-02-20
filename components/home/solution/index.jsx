@@ -56,7 +56,7 @@ const Solution = () => {
                 className="h-auto w-auto md:h-full md:w-full object-cover object-right"
               />
           </div>
-          <div className="flex-1 md:flex-[5] relative mt-20 pb-32 md:pl-20">
+          <div className="flex-1 md:flex-[5] relative mt-20 md:pb-32 md:pl-20">
             <div>
               <h1>Who We Are</h1>
               <p>Founded in 2015, Axxess Corporate Consulting Limited is built on a foundation of excellence, professionalism, and passion for corporate governance. Our team of highly experienced consultants brings decades of industry expertise in legal advisory, board governance, compliance, and company secretarial services. We are dedicated to fostering ethical leadership and governance best practices to strengthen organizations.</p>

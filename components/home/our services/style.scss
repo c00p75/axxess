@@ -9,6 +9,7 @@
     @media(width <= 768px) {      
       // height: fit-content;
       // overflow: hidden;
+      height: 35rem;
     } 
   }
   
@@ -38,6 +39,8 @@
     transition: transform .8s cubic-bezier(0, 0.02, 0, 1);
 
     @media(width <= 768px) {      
+      --width: clamp(150px, 60vw,  300px);
+      --height: clamp(200px, 80vw,  400px);
       background: rgb(28, 17, 3);
     } 
   

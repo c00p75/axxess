@@ -102,9 +102,9 @@ const ShortCourses = () => {
 	]
 
   return (
-    <section id='course-container' className='mt-24 md:-mt-10 px-0'>
-			<h1 className='text-center text-[#5f3209]'>Customized Training / Short Courses</h1>
-			<div className='flex gap-6 justify-center md:justify-end  md:mr-16 mt-10 mb-5'>
+    <section id='course-container' className='mt-64 md:-mt-10 px-0'>
+			<h1 className='text-center text-[#5f3209] px-5'>Customized Training / Short Courses</h1>
+			<div className='hidden md:flex gap-6 justify-center md:justify-end md:mr-16 mt-10 mb-5'>
 				<button className='flex items-center w-fit text-xl h-20 rounded-full' onClick={() => scroll("left")}>
 					<CircleChevronLeft color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
 				</button>
@@ -112,7 +112,7 @@ const ShortCourses = () => {
 					<CircleChevronRight color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
 				</button>
 			</div>
-			<div>
+			<div className='mt-10 md:mt-0'>
 				<ul ref={scrollRef} className="cards scroll-smooth no-scrollbar">
 					{courses.map((course, i) => (
 						<li>
@@ -138,7 +138,15 @@ const ShortCourses = () => {
 						</li>
 					))}
 				</ul>
-			</div>			
+			</div>	
+			<div className='md:hidden flex gap-6 justify-center md:justify-end  md:mr-16s mb-5'>
+				<button className='flex items-center w-fit text-xl h-20 rounded-full' onClick={() => scroll("left")}>
+					<CircleChevronLeft color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
+				</button>
+				<button className='flex items-center w-fit text-xl h-20 rounded-full' onClick={() => scroll("Right")}>
+					<CircleChevronRight color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
+				</button>
+			</div>		
     </section>
   )
 }

@@ -81,7 +81,7 @@ const Contact = () => {
               <p>At Axxess Corporate Consulting Limited, we value strong relationships with our clients and partners. Whether you have a question about our services, need expert corporate governance advice, or are looking to schedule a consultation, we’re here to assist you.</p>
               <div className="mt-10 flex flex-col text-left">
                 <h2 className="flex items-center mb-3">Contact Information </h2>                
-                <h5 className="font-semibold pt-5 md:pt-2 flex"><MapPin color="#75471c" className="mr-3 w-14 ml-2 md:ml-0" /> Office Address : Plot 2071, 12 Ingwe Rd, Woodlands</h5>
+                <h5 className="font-semibold pt-5 md:pt-2 flex"><MapPin color="#75471c" className="mr-3 w-14 ml-2 md:-ml-4 pl-4" />Office Address : Plot 2071, 12 Ingwe Rd, Woodlands</h5>
                 <h5 className="font-semibold pt-5 md:pt-2 flex"><PhoneCall color="#75471c" strokeWidth={2} className="mr-3 w-10" /> Phone : +260 977 788 466</h5>                
                 <h5 className="font-semibold pt-5 md:pt-2 flex"><Mail color="#75471c" strokeWidth={2} className="mr-3 w-10" /> Email : axxesscorporate@gmail.com</h5>  
                 <h5 className="font-semibold pt-5 md:pt-2 flex"><CalendarDays color="#75471c" strokeWidth={2} className="mr-3 w-10 ml-1 md:ml-0" /> Business Hours : Monday – Friday: 08:00 AM – 05:00 PM</h5>                
