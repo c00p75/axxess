@@ -47,7 +47,7 @@ const Solution = () => {
           </div>
         </div>
 
-        <div className="flex bg-gradient-to-br from-[#faeea9] to-[transparent] pb-24 md:pb-0 flex-col md:flex-row px-3 md:px-0">
+        <div className="flex bg-gradient-to-br from-[rgba(250,238,169,0.7)] to-[transparent] pb-24 md:pb-0 flex-col md:flex-row px-3 md:px-0">
           <div className="hidden md:flex flex-[4]">
             <Image
                 src={img2}
