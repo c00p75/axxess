@@ -122,7 +122,7 @@ const AboutUs = () => {
 
         <section id="sectionPin" className="hidden md:block p-0">
           <div className="pin-wrap" id="pin-wrap-ref">
-            <div className="bg-[#75471c] text-[#ebe1bc] pt-[20vh] md:pt-[22vh] flex flex-col h-full w-[100%] min-w-[100vw] md:min-w-[60vw] relative px-5 md:px-20">
+            <div id="vision-container" className="bg-[#75471c] text-[#ebe1bc] pt-20 md:pt-[22vh] flex flex-col h-full w-[100%] min-w-[100vw] md:min-w-[60vw] relative px-5 md:px-20">
               <h1 className='left-text flex justify-center md:justify-normal gap-2 md:gap-5 items-center md:text-6xl md:pb-2'>
                 Our Vision
                 <Image

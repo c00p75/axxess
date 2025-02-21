@@ -102,8 +102,8 @@ const ShortCourses = () => {
 	]
 
   return (
-    <div id='course-container' className='px-0'>
-			<h1 className='text-center text-[#5f3209] px-5 mt-20 md:mt-28'>Customized Training / Short Courses</h1>
+    <section id='course-container' className='mt-64 md:mt-20 px-0'>
+			<h1 className='text-center text-[#5f3209] px-5'>Customized Training / Short Courses</h1>
 			<div className='hidden md:flex gap-6 justify-center md:justify-end md:mr-16 mt-10 mb-5'>
 				<button className='flex items-center w-fit text-xl h-20 rounded-full' onClick={() => scroll("left")}>
 					<CircleChevronLeft color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
@@ -147,7 +147,7 @@ const ShortCourses = () => {
 					<CircleChevronRight color="white" fill='#936133' strokeWidth={1.5} className='h-16 w-16' />
 				</button>
 			</div>		
-    </div>
+    </section>
   )
 }
 

@@ -1,58 +1,179 @@
-.home-section {
-  animation: animate-hero-bg 10s ease-in-out infinite;
-}
-
-.hero-img {
-  animation: animate-hero-img 8s ease-in-out infinite;
-}
-
-@keyframes animate-hero-img {
-  0%,
-  40% {
-    filter: sepia(0);
+.home-hero-section {
+  .wrapper{
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    box-sizing: content-box;
   }
 
-  40%,
-  60% {
-    filter: sepia(1);
+  .mask{
+      height: 100vh;
+      overflow: hidden;
+      
   }
-  60%,
-  100% {
-    filter: sepia(0);
+  .column{
+      display: flex;
+      flex-flow: column nowrap;
+      position: relative;
+      transform: translateY(-100vh);
+  }
+
+  .left{
+      width: 45%;
+      h1 {
+        text-shadow: -1px -1px 1px #211408;
+      }
+      .home-hero-text-overlay {
+        background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), transparent);
+        @media(width <= 756px){
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+  }
+  .right{
+      width: 55%;
+
+  }
+  .content{
+      display: flex;
+      flex-flow: column nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      background-size: 100vw auto;
+      background-position: left;
+      background-repeat: no-repeat;
+      @media(width <= 768px) {      
+          width: 100vw;
+          background-size: cover;
+          background-position: center;
+          backdrop-filter: blur(15px);
+          background-repeat: no-repeat;
+      }
+  }
+
+  .content h2{
+      color: white;
+      font-weight: 600;
+      font-size: 50px;
+  }
+  .content p{
+      font-size: 18px;
+      color: white;
+  }
+  .content a{
+      background-color: white;
+      padding: 10px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+  }
+
+  .pic{
+      width: 100%;
+      height: 100%;
+      background-size: 100vw auto;
+      background-position: right;
+      background-repeat: no-repeat;
+      @media(width <= 768px) {      
+        display: none;
+    }
+  }
+
+  // .right .blue,
+  // .content.blue{
+  //     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/mountain-3948461_1920.jpg?raw=true);
+  // }
+  // .right .red,
+  // .content.red{
+  //     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/29970171536_191e725da1_k.jpg?raw=true);
+  // }
+  // .right .gold,
+  // .content.gold{
+  //     background-image: url(https://github.com/webDaeve/verticalslider/blob/main/johnny-mcclung-uYTKzVp8loQ-unsplash.jpg?raw=true);
+  // }
+
+  .left.next{
+      transform: translateY(-200vh);
+      transition: all 0.5s ease-in;
+  }
+  .right.next{
+      transform: translateY(0vh);
+      transition: all 0.5s ease-in;
+      
+  }
+  .left.prev{
+      transform: translateY(0vh);
+      transition: all 0.5s ease-in;
+  }
+  .right.prev{
+      transform: translateY(-200vh);
+      transition: all 0.5s ease-in;
+      
+  }
+
+  .home-hero-overlay {
+      z-index: 1;
+      background: radial-gradient(#75471cef, #2d1a091b);
+      // opacity: 0.9;
+    }
+
+  section:not(#sectionPin) {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // grid-gap: 2rem;
+    margin: auto;
+    place-items: center;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #sectionPin {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+    padding: 0 !important;
+    @media(width <= 768px){
+      padding-left: 0 !important;
+    }
+  }
+
+  .pin-wrap {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .p-0 {
+    padding: 0 !important;
+  }
+
+  .service-section {
+    height: fit-content !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    padding-block: 5rem !important;
+  }
+
+  #sectionPin {
+    @media(width <= 768px) { 
+      h1 { font-size: 1.5rem; margin-bottom: 0.5rem;}
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4, h5 { font-size: 1.125rem; }
+    } 
   }
 }
 
-
-// .box {
-//   position: relative;
-//   width: 500px;
-//   height: 500px;
-// }
-
-// .box span {
-//   position: absolute;
-//   inset: 0;
-// }
-
-// .box span::before {
-//   content: "";
-//   position: absolute;
-//   width: 350px;
-//   height: 400px;
-//   left: 15%;
-//   background: url("/elements/bulb-off.png");
-//   background-size: cover;
-//   background-position: center;
-//   transform: scale(0.8);
-//   animation: animate 2s linear infinite;
-// }
-
-// @keyframes animate {
-//   0%,
-//   100% {
-//     background: url("/elements/bulb-off.png");
-//   }
-//   50% {
-//     background: url("/elements/bulb-on.png");
-//   }
-// }

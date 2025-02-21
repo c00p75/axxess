@@ -14,7 +14,7 @@ const Solution = () => {
               At Axxess Corporate Consulting Limited, we specialize in providing world-class corporate governance solutions, board support services, and company secretarial expertise to businesses in Zambia and beyond. With a team of seasoned professionals, we help organizations enhance their corporate governance frameworks, ensuring compliance, efficiency, and sustainability.
             </p>
           </div>
-          <div id="stats-container" className="relative mx-1 md:mx-0 md:w-[30%] h-[25rem] bg-gradient-to-br from-[#75471c] to-[#75471c] rounded-md flex-center">
+          <div className="relative mx-1 md:mx-0 md:w-[30%] h-[25rem] bg-gradient-to-br from-[#75471c] to-[#75471c] rounded-md flex-center">
             <Image
               src={Bulb}
               alt="Axxess"
@@ -47,7 +47,7 @@ const Solution = () => {
           </div>
         </div>
 
-        <div className="flex bg-[#75471c] text-[#f1e9ca] flex-col md:flex-row px-3 md:px-0">
+        <div className="flex bg-[#75471c] text-[#f1e9ca] pb-24 md:pb-0 flex-col md:flex-row px-3 md:px-0">
           <div className="hidden md:flex flex-[4]">
             <Image
                 src={img2}
@@ -56,7 +56,7 @@ const Solution = () => {
                 className="h-auto w-auto md:h-full md:w-full object-cover object-right brightness-90"
               />
           </div>
-          <div className="flex-1 md:flex-[5] relative mt-20 pb-20 md:pb-32 md:pl-20">
+          <div className="flex-1 md:flex-[5] relative mt-20 pb-32 md:pl-20">
             <div>
               <h1>Who We Are</h1>
               <p>Founded in 2015, Axxess Corporate Consulting Limited is built on a foundation of excellence, professionalism, and passion for corporate governance. Our team of highly experienced consultants brings decades of industry expertise in legal advisory, board governance, compliance, and company secretarial services. We are dedicated to fostering ethical leadership and governance best practices to strengthen organizations.</p>

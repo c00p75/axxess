@@ -1,11 +1,4 @@
 .our-services{
-  .our-services-header {
-    font-size: 4.5rem !important;
-    @media(width <= 768px) { 
-      font-size: 3.75rem !important;
-    }
-
-  }
   .carousel {
     position: relative;
     z-index: 1;
@@ -18,7 +11,7 @@
     @media(width <= 768px) {      
       // height: fit-content;
       // overflow: hidden;
-      height: 45rem;
+      height: 35rem;
     } 
   }
 

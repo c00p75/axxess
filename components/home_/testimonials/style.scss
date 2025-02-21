@@ -1,0 +1,195 @@
+
+    .testimonial{
+        background: linear-gradient(45deg, rgba(250,238,169,0.7) 10%, white);
+        .testimonial-container{                            
+            .testimonial-button{
+                    all:unset;
+                    display: block;
+                    position: relative;
+                    z-index: 10;
+                    &.active{
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            width: 50px;
+                            height: 50px;
+                            background-color: #936133;
+                            border-radius: 50%;
+                        }
+                    }
+                    &.active{
+                        figure{&::after{
+                            position: absolute;
+                            content: "";
+                            
+                            background-color: #936133;
+                            border-radius: 50%;    
+                            -webkit-transform: scale(1.1);
+                                -ms-transform: scale(1.1);
+                                transform: scale(1.1);                        
+                        }}
+                    }
+                    &:nth-child(1){
+                       align-self: flex-end;
+                       width: 15rem;
+                        height: 15rem;
+                       &::before{
+                            left: 74%;
+                            bottom: -60px;
+                       }
+                       &::after{
+                            left: 97%;
+                            bottom: -101px;                           
+                       }
+                            img{
+                                margin-left:auto;
+                            }
+                       
+                    }
+                    &:nth-child(2){
+                        align-self: flex-start;
+                        width: 20rem;
+                        height: 20rem;
+                        &::before{
+                            right: -135px;
+                            top: 50%;                    
+                        }
+                        &::after{
+                            bottom: 131px;
+                            border-radius: 50%;
+                            right: -190px;
+                        }
+                            img{
+                                max-width: 300px;
+                                width: 100%;
+                            }
+                        
+                    }
+                    &:nth-child(3){
+                        align-self: flex-end;
+                        width: 15rem;
+                        height: 15rem;
+                        &::before{
+                            right: -10px;
+                            top: -36%;                  
+                        }
+                        &::after{
+                            top: -110px;
+                            border-radius: 50%;
+                            right: -76px;
+                        }
+                            img{
+                                margin-left:auto;
+                                
+                            }
+                        
+                    }
+                    figure{
+                        height: 100%;
+                        width: 100%;
+                        position: relative;
+                        img{
+                            display: block;
+                        }
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top:0;
+                            z-index: -1;
+                            width: 100%;
+                            height: 100%;
+                            border: 4px solid #936133;
+                            border-radius: 50%;
+                            -webkit-transform: scale(0.9);
+                            -ms-transform: scale(0.9);
+                            transform: scale(0.9);
+                            -webkit-transition: 0.3s;
+                            -o-transition: 0.3s;
+                            transition: 0.3s;
+                        }
+                        &:hover{
+                            &::after{
+                                -webkit-transform: scale(1.1);
+                                -ms-transform: scale(1.1);
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+                &.carousel-indicators{
+                    li.active{
+                        figure{
+                            &::after{
+                                -webkit-transform: scale(1.1);
+                                -ms-transform: scale(1.1);
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            
+            .carousel{
+                > h3{
+                    font-size: 20px;
+                    line-height: 1.45;
+                    color: rgba(0,0,0,.5);
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                h1{
+                    font-size: 40px;
+                    line-height: 1.225;
+                    margin-top: 23px;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+                .carousel-indicators{
+                    all: unset;
+                    padding-top: 43px;
+                    display: flex;
+                    list-style: none;
+                    li{
+                        background: #000;
+                        background-clip: padding-box;
+                        height: 2px;
+                    }
+                }
+                .carousel-inner{
+                   .carousel-item{
+                        .quote-wrapper{
+                            margin-top: 42px;
+                            p{
+                                font-size: 18px;
+                                line-height: 1.72222;
+                                font-weight: 500;
+                                color: rgba(0,0,0,.7);
+                            }
+                            h3{
+                                color: #000;
+                                font-weight: 700;
+                                margin-top: 37px;
+                                font-size: 20px;
+                                line-height: 1.45;
+                                text-transform: uppercase;
+                            }
+                        }
+                   }
+                }
+            }
+        }
+    }
+
+@media only screen and (max-width: 1200px) {
+    body{
+        .testimonial{
+            .row{
+                .tabs{
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 567px) {
+    
+}

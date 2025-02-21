@@ -74,7 +74,7 @@ const Contact = () => {
               <h1 data-scroll data-scroll-speed="4" data-scroll-delay="0.5" className='text-white text-7xl px-5 md:px-0 md:text-8xl text-center'>
                 Contact <br/> Us
               </h1>   
-            <div data-scroll data-scroll-speed="2" data-scroll-delay="0.5" className='w-[5px] h-2/5 md:h-[30%] absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 rounded overflow-hidden'>
+            <div data-scroll data-scroll-speed="2" data-scroll-delay="0.5" className='w-[5px] h-[20%]  md:h-[30%] absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 rounded overflow-hidden'>
               <span className='header-line h-full w-full flex bg-white rounded-full' />
             </div> 
           </div>

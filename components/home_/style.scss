@@ -1,0 +1,58 @@
+.home-section {
+  animation: animate-hero-bg 10s ease-in-out infinite;
+}
+
+.hero-img {
+  animation: animate-hero-img 8s ease-in-out infinite;
+}
+
+@keyframes animate-hero-img {
+  0%,
+  40% {
+    filter: sepia(0);
+  }
+
+  40%,
+  60% {
+    filter: sepia(1);
+  }
+  60%,
+  100% {
+    filter: sepia(0);
+  }
+}
+
+
+// .box {
+//   position: relative;
+//   width: 500px;
+//   height: 500px;
+// }
+
+// .box span {
+//   position: absolute;
+//   inset: 0;
+// }
+
+// .box span::before {
+//   content: "";
+//   position: absolute;
+//   width: 350px;
+//   height: 400px;
+//   left: 15%;
+//   background: url("/elements/bulb-off.png");
+//   background-size: cover;
+//   background-position: center;
+//   transform: scale(0.8);
+//   animation: animate 2s linear infinite;
+// }
+
+// @keyframes animate {
+//   0%,
+//   100% {
+//     background: url("/elements/bulb-off.png");
+//   }
+//   50% {
+//     background: url("/elements/bulb-on.png");
+//   }
+// }
