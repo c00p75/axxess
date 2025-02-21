@@ -16,7 +16,7 @@ const OurServices = () => {
           src={logo}
           alt="axxess"
           quality={100}
-          className="max-w-none h-auto w-[80vw] left-[10vw] md:left-0 top-[55%] md:w-full absolute md:relative" />
+          className="max-w-none h-auto w-[80vw] left-[10vw] md:left-0 top-[55%] md:top-0 md:w-full absolute md:relative" />
       </div>
       
       <h1 className='our-services-header px-16 absolute right-[0] top-[10%] md:top-[25%] text-6xl md:text-7xl text-[#391e06] md:text-white text-center md:text-right'>
