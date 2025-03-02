@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     gap: 2em;
-    padding: 2em;
+    padding: 2em 1rem;
     border-radius: calc(var(--curve) * 1px) 0 0 0;    
     background-color: var(--surface-color);
     transform: translateY(-100%);
@@ -127,7 +127,7 @@
     margin: 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     overflow: hidden;
   }    
 

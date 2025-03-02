@@ -2,43 +2,21 @@
 
 
 .team-section {
-  .card {
-    border: 2px solid transparent;
-    background-image: linear-gradient(#584827, #2d230f),
-      conic-gradient(
-        from var(--gradient-angle),
-        #584827 0%,
-        #c7a03c 37%,
-        #f9de90 30%,
-        #c7a03c 33%,
-        #584827 40%,
-        #584827 50%,
-        #c7a03c 77%,
-        #f9de90 80%,
-        #c7a03c 83%,
-        #584827 90%
-      );
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-
-    .card-overlay {
-      transition: all 0.2s ease-in-out;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-  }
-
   .card:nth-child(1) {
     margin-left: 3rem !important;
+
+    @media(width <= 768px) {
+      margin-left: 0 !important;
+    }
   }
 
   .card:nth-child(3),
   .card:nth-child(5) {
     margin-top: 3rem !important;
+
+    @media(width <= 768px) {
+      margin-top: 0 !important;
+    }
   }
 
   @keyframes gradient-angle {
@@ -71,6 +49,17 @@
     aspect-ratio: 1/1;
     row-gap: 16px;
     padding: 0px;
+    box-shadow: 0 5px 10px 10px rgba(0, 0, 0, 0.1);
+
+    .card-overlay {
+      transition: all 0.2s ease-in-out;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
 
     img {
       border-radius: 7px;
