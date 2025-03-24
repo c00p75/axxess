@@ -15,9 +15,12 @@ import course9 from "@/public/backgrounds/course-9.png";
 import course1 from "@/public/backgrounds/course-1.png";
 import course10 from "@/public/backgrounds/course-10.png";
 import { CircleChevronLeft, CircleChevronRight } from 'lucide-react';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import { AppContext } from '@/app/RootLayoutClient';
 
 const ShortCourses = ({setEvent}) => {
+	const { registrationDetails, setRegistrationDetails } = useContext(AppContext);
+
 	const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -106,10 +109,13 @@ const ShortCourses = ({setEvent}) => {
 												<h3 className="card__title">{course.title}</h3>            
 												<div className='flex justify-between items-center'>
 													<button 
-														onClick={() => {setEvent({
-															eventImage: course.image,
-															eventName: course.name
-														})
+														onClick={() => {
+															setRegistrationDetails({
+																eventImage: course.image,
+																eventName: course.title,
+																// defaultDate: '04-04-2025',
+																// allowedDates: ['04-04-2025', '04-05-2025']
+															});
 														}}
 														className="card__status px-2 py-1 border-2 border-white rounded-xl cursor-pointer"
 													>

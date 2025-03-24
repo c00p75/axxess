@@ -2,21 +2,23 @@
 
 import { CircleCheckBig, SquareX, TriangleAlert, X } from 'lucide-react'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AppContext } from "@/app/RootLayoutClient";
 import dayjs from 'dayjs';
 import './style.scss'
 
-const RegistrationForm = ({ registrationDetails, setEvent }) => {
+const RegistrationForm = () => {
+  const { registrationDetails, setRegistrationDetails } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false)
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-    event: registrationDetails.eventImage || '',
+    event: registrationDetails.eventName || '',
     company: '',
     firstName: '',
     lastName: '',
@@ -35,7 +37,7 @@ const RegistrationForm = ({ registrationDetails, setEvent }) => {
   }, [])
 
   const closeModal = () => {
-    setEvent({ eventImage: '', eventName: '' })
+    setRegistrationDetails({ eventImage: '', eventName: '' })
   }
 
   const handleDateChange = (date) => {
@@ -47,15 +49,17 @@ const RegistrationForm = ({ registrationDetails, setEvent }) => {
   }
 
   const getOrdinalSuffix = (day) => {
-    const suffixes = ["th", "st", "nd", "rd"];
-    const j = day % 10,
-      k = day % 100;
-    return suffixes[(j - 1) % 10] || suffixes[0];
+    const j = day % 10;
+    const k = day % 100;
+    if (j === 1 && k !== 11) { return 'st'; }
+    if (j === 2 && k !== 12) { return 'nd'; }
+    if (j === 3 && k !== 13) { return 'rd'; }
+    return 'th';
   };
 
   const allowedDates = [
     dayjs('04-04-2025'),
-    dayjs('05-04-2025'),
+    dayjs('04-05-2025'),
   ];
 
   const shouldDisableDate = (date) => {
@@ -78,8 +82,6 @@ const RegistrationForm = ({ registrationDetails, setEvent }) => {
         ? dayjs(formData.eventDate).format('D') + getOrdinalSuffix(dayjs(formData.eventDate).date()) + ' ' + dayjs(formData.eventDate).format('MMMM YYYY') 
         : 'Not Provided',
     };
-
-    console.log(emailParams)
 
     emailjs
       .send(

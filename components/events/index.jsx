@@ -9,19 +9,16 @@ import "./style.scss";
 import bg from '@/public/backgrounds/18.jpg';
 import data_protection from '@/public/events/data-protection-law.jpg';
 import Image from "next/image";
-import { MousePointer2, SquareCheckBig } from "lucide-react";
+import { SquareCheckBig } from "lucide-react";
 import Footer from "../footer";
-import target from "@/public/elements/target-2.png";
-import vision from "@/public/elements/vision-1.png";
-import about1 from "@/public/elements/1.jpeg";
-import about2 from "@/public/elements/4.jpeg";
-import boardroom from '@/public/elements/2.jpeg';
 import ShortCourses from "../home/short courses";
-import RegistrationForm from "./registration form";
+import { useContext } from "react";
+import { AppContext } from "@/app/RootLayoutClient";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Events = ({setEvent}) => {      
+const Events = () => {      
+  const { registrationDetails, setRegistrationDetails } = useContext(AppContext);
   useEffect(async() => {
     if (typeof window !== "undefined") {
         const LocomotiveScrollModule = await import("locomotive-scroll");
@@ -166,7 +163,7 @@ const Events = ({setEvent}) => {
                       <h2 className='text-2xl'>
                         <button
                           onClick={() => {
-                            setEvent({
+                            setRegistrationDetails({
                               eventImage: data_protection,
                               eventName: 'Masterclass in Data Protection Law',
                               // defaultDate: '2025-04-04',
@@ -241,7 +238,7 @@ const Events = ({setEvent}) => {
                       <h2 className='text-2xl'>
                         <button
                           onClick={() => {
-                            setEvent({
+                            setRegistrationDetails({
                               eventImage: data_protection,
                               eventName: 'Masterclass in Data Protection Law',
                               // defaultDate: '04-04-2025',
@@ -259,7 +256,7 @@ const Events = ({setEvent}) => {
             </div> 
           </div>
         </section>          
-        <ShortCourses setEvent={setEvent} />     
+        <ShortCourses />     
         <Footer />    
         
       </div>
