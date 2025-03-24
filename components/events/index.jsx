@@ -147,22 +147,26 @@ const Events = ({setEvent}) => {
                       <span>Key principles of data privacy and security</span>  
                     </li>
 
-                    <li className="gap-3 hidden lg:flex">
+                    <li className="gap-3 hidden 2xl:flex">
                       <SquareCheckBig />
                       <span>Legal obligations for businesses and organizations</span>  
                     </li>
 
-                    <li className="gap-3 hidden lg:flex">
+                    <li className="gap-3 hidden 2xl:flex">
                       <SquareCheckBig />
                       <span>How to develop a data protection compliance framework</span>  
                     </li>
 
-                    <li className="gap-3 hidden lg:flex">
+                    <li className="gap-3 hidden 2xl:flex">
                       <SquareCheckBig />
                       <span>Best practices for handling personal data</span>  
                     </li>
 
-                    <li className="gap-3 hidden lg:flex">
+                    <li className="gap-3 hidden lg:flex 2xl:hidden">
+                      <h2 className="text-balance mt-2">And More...</h2>  
+                    </li>
+
+                    <li className="gap-3 hidden 2xl:flex">
                       <SquareCheckBig />
                       <span>Real-world case studies and interactive Q&A</span>
                     </li>
