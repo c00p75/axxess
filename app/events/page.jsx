@@ -5,13 +5,18 @@ import RegistrationForm from "@/components/events/registration form";
 import { useState } from "react";
 
 const ContactPage = () => {
-  const [registrationDetails, setRegistrationDetails] = useState({ eventImage: null, eventName: '' });
+  const [registrationDetails, setRegistrationDetails] = useState({ 
+    eventImage: null, 
+    eventName: '', 
+    defaultDate: '',
+    allowedDates: null,
+  });
 
   return (
     <>
       <Events setEvent={setRegistrationDetails} />
       {registrationDetails.eventName && (
-        <RegistrationForm setEvent={setRegistrationDetails} image={registrationDetails.eventImage} event={registrationDetails.eventName} />
+        <RegistrationForm setEvent={setRegistrationDetails} registrationDetails={registrationDetails} />
       )}
     </>
   );

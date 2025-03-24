@@ -21,15 +21,7 @@ import RegistrationForm from "./registration form";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Events = ({setEvent}) => {    
-  const handleSelectEvent = (image, name) => {
-    console.log("Setting event details...");
-    setEvent({
-      eventImage: image,
-      eventName: name
-    });
-  };
-  
+const Events = ({setEvent}) => {      
   useEffect(async() => {
     if (typeof window !== "undefined") {
         const LocomotiveScrollModule = await import("locomotive-scroll");
@@ -170,10 +162,17 @@ const Events = ({setEvent}) => {
                       <SquareCheckBig />
                       <span>Real-world case studies and interactive Q&A</span>
                     </li>
-                    <li className="flex justify-center mt-10 md:mt-5 2xl:mt-10">
+                    <li className="flex justify-center mt-10 md:mt-6 2xl:mt-10">
                       <h2 className='text-2xl'>
                         <button
-                          onClick={() => {handleSelectEvent(data_protection, 'Masterclass in Data Protection Law')}}
+                          onClick={() => {
+                            setEvent({
+                              eventImage: data_protection,
+                              eventName: 'Masterclass in Data Protection Law',
+                              // defaultDate: '2025-04-04',
+                              // allowedDates: ['2025-04-04', '2025-05-04']
+                            });
+                          }}
                           className="bg-[#75471c] text-white text-center px-5 py-2 border-2 rounded-full"
                         >
                           Register
@@ -241,7 +240,14 @@ const Events = ({setEvent}) => {
                     <li className="flex justify-center w-full my-10">
                       <h2 className='text-2xl'>
                         <button
-                          onClick={() => {handleSelectEvent(data_protection, 'Masterclass in Data Protection Law')}}
+                          onClick={() => {
+                            setEvent({
+                              eventImage: data_protection,
+                              eventName: 'Masterclass in Data Protection Law',
+                              // defaultDate: '04-04-2025',
+                              // allowedDates: ['04-04-2025', '04-05-2025']
+                            });
+                          }}
                           className="bg-[#75471c] text-white text-center px-5 py-2 border-2 rounded-full">
                             Register
                           </button>

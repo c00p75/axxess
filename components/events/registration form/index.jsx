@@ -1,6 +1,6 @@
 'use client'
 
-import { SquareX } from 'lucide-react'
+import { CircleCheckBig, SquareX, TriangleAlert, X } from 'lucide-react'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
@@ -8,12 +8,16 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
+import AlertTitle from '@mui/material/AlertTitle';
+import Alert from '@mui/material/Alert';
 
-const RegistrationForm = ({ image, event, setEvent }) => {
-  
-  const [eventValue, setEventValue] = useState(event || '')
+const RegistrationForm = ({ registrationDetails, setEvent }) => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false)
+  const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-    event: event || '',
+    event: registrationDetails.eventImage || '',
     company: '',
     firstName: '',
     lastName: '',
@@ -22,7 +26,7 @@ const RegistrationForm = ({ image, event, setEvent }) => {
     email: '',
     phone: '',
     amount: 'K2000',
-    eventDate: null,
+    eventDate: dayjs('04-04-2025'),
   })
 
   useEffect(() => {
@@ -43,9 +47,16 @@ const RegistrationForm = ({ image, event, setEvent }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const getOrdinalSuffix = (day) => {
+    const suffixes = ["th", "st", "nd", "rd"];
+    const j = day % 10,
+      k = day % 100;
+    return suffixes[(j - 1) % 10] || suffixes[0];
+  };
+
   const allowedDates = [
-    dayjs('2025-04-04'),
-    dayjs('2025-04-05'),
+    dayjs('04-04-2025'),
+    dayjs('05-04-2025'),
   ];
 
   const shouldDisableDate = (date) => {
@@ -57,28 +68,34 @@ const RegistrationForm = ({ image, event, setEvent }) => {
     setLoading(true);
 
     const emailParams = {
-      name: formData.name,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
       email: formData.email,
       phone: formData.phone,
       company: formData.company,
+      amount: formData.amount,
       event: formData.event,
-      eventDate: formData.eventDate ? dayjs(formData.eventDate).format('YYYY-MM-DD') : 'Not Provided',
+      eventDate: formData.eventDate 
+        ? dayjs(formData.eventDate).format('D') + getOrdinalSuffix(dayjs(formData.eventDate).date()) + ' ' + dayjs(formData.eventDate).format('MMMM YYYY') 
+        : 'Not Provided',
     };
+
+    console.log(emailParams)
 
     emailjs
       .send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_9epyqvj',
+        'template_x71hm3d',
         emailParams,
-        'YOUR_PUBLIC_KEY'
+        'Sp3HYboSpdIR0QH0x'
       )
       .then(
         () => {
-          setMessage('Registration successful! Check your email for next steps.');
+          setSuccess(true)
           setLoading(false);
         },
         () => {
-          setMessage('Something went wrong. Please try again.');
+          setFailed(true)
           setLoading(false);
         }
       );
@@ -92,9 +109,9 @@ const RegistrationForm = ({ image, event, setEvent }) => {
           <SquareX color="#75471c" size={40} strokeWidth={1.5} />
         </button>
 
-        {image && (
+        {registrationDetails.eventImage && (
           <div className="w-1/2 h-full hidden lg:flex items-center justify-center p-5">
-            <Image src={image} alt="Axxess" className="object-contain w-full h-full" />
+            <Image src={registrationDetails.eventImage} alt="Axxess" className="object-contain w-full h-full" />
           </div>
         )}
         <div className="py-8 md:px-8 md:py w-full lg:w-1/2 h-[100vh] overflow-scroll">
@@ -115,14 +132,17 @@ const RegistrationForm = ({ image, event, setEvent }) => {
               </div>
 
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">Select Event Date</label>
+                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+                  Event Date
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
+                </label>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     value={formData.eventDate}
                     onChange={handleDateChange}
-                    format="YYYY-MM-DD"
+                    format="DD-MM-YYYY"
                     shouldDisableDate={shouldDisableDate}
-                    defaultValue={dayjs('2025-04-04')}
+                    defaultValue={dayjs('04-04-2025')}
                     slotProps={{ textField: { fullWidth: true, variant: "outlined" } }}
                     className='bg-white'
                   />
@@ -134,6 +154,7 @@ const RegistrationForm = ({ image, event, setEvent }) => {
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   First Name
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
                 </label>
                 <input 
                   required 
@@ -146,6 +167,7 @@ const RegistrationForm = ({ image, event, setEvent }) => {
               <div className="w-full md:w-1/2 px-3">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Last Name
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
                 </label>
                 <input 
                   required 
@@ -168,8 +190,9 @@ const RegistrationForm = ({ image, event, setEvent }) => {
                     id="gender"
                     onChange={handleChange}
                   >
-                    <option>Male</option>
-                    <option>Female</option>
+                    <option value="" disabled selected className='text-slate-300 hidden'></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -181,7 +204,6 @@ const RegistrationForm = ({ image, event, setEvent }) => {
                   Location
                 </label>
                 <input 
-                  required
                   placeholder='Province, city'
                   className="placeholder-slate-200 appearance-none block w-full text-black/70 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-[#75471c]" id="last-name" type="text" name="surname" autocomplete="family-name"
                   onChange={handleChange}
@@ -193,6 +215,7 @@ const RegistrationForm = ({ image, event, setEvent }) => {
               <div className="w-full md:w-1/2 px-3">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Email
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
                 </label>
                 <input 
                   required 
@@ -207,23 +230,61 @@ const RegistrationForm = ({ image, event, setEvent }) => {
               <div className="w-full md:w-1/2 px-3">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Phone Number
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
                 </label>
                 <input 
                   required 
                   placeholder='+260974549983'
                   className="appearance-none block w-full text-black/70 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#75471c]" 
-                  name="tel" 
+                  name="phone" 
                   type="tel" 
                   onChange={handleChange}
                 />
               </div>
             </div>            
-            <button type="submit" className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full">
-              Submit
+            <button
+              type="submit"
+              className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full"
+              disabled={loading}  
+            >
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
           </form>
         </div>
       </div>
+      {!success && (
+        <div className='absolute flex-center top-0 left-0 w-screen h-screen bg-black/30 p-4 z-[2] cursor-auto'>
+          <div className='relative flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-[#edf7ed] px-10 py-20 text-[#2c522e] rounded-md shadow-2xl text-center'>          
+            <button className='absolute top-0 right-0 p-2 mx-4 my-2' onClick={closeModal}>
+              <X color="#2c522e" size={30} strokeWidth={2} />
+            </button>
+            <CircleCheckBig color="#2c522e" strokeWidth={3} size={100} />
+            <div className=' flex flex-col'>
+              <h2 className='text-4xl font-extrabold mb-3'>Registration successful!</h2>
+              <span>Check your email for next steps.</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {failed && (
+        <div className='absolute flex-center top-0 left-0 w-screen h-screen bg-black/30 p-4 z-[2] cursor-auto'>
+          <div className='relative flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-red-100 px-10 py-20 text-red-700 rounded-md shadow-2xl text-center'>          
+            <button className='absolute top-0 right-0 p-2 mx-4 my-2' onClick={closeModal}>
+              <X color="#b91c1c" size={30} strokeWidth={2} />
+            </button>
+            <TriangleAlert color="#dc2626" strokeWidth={3} size={100} />
+            <div className=' flex flex-col'>
+              <h2 className='text-4xl font-extrabold mb-3'>Something went wrong.</h2>
+              <span>Please try again.</span>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* <Alert severity="success" className='absolute z-[2]'>
+        <AlertTitle>Success</AlertTitle>
+        This is a success Alert with an encouraging title.
+      </Alert> */}
     </div>
   )
 }
