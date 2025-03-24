@@ -41,6 +41,10 @@ const Navbar = () => {
         "url": "/services"
       },
       {
+        "name": "Events",
+        "url": "/events"
+      },
+      {
         "name": "Contact Us",
         "url": "/contact-us"
       }
