@@ -135,34 +135,34 @@ const Events = ({setEvent}) => {
                   <h2 className='text-4xl'>Masterclass in Data Protection Law</h2>
                   <h2 className='text-2xl'>Stay Compliant, Stay Secure!</h2>
                   <p>Join our Masterclass in Data Protection Law to master the Data Protection Act and your compliance role. Gain essential knowledge and practical tools to navigate data privacy regulations effectively.</p>
-                  <h2 className='text-2xl'>What You Will Learn</h2>
-                  <ul className="pl-5 flex flex-col gap-2 w-fit">
-                    <li className="flex gap-3">
+                  <h2 className='text-2xl hidden lg:flex'>What You Will Learn</h2>
+                  <ul className="pl-5 flex-col gap-2 w-fit">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>Understanding Zambia’s Data Protection Act</span>  
                     </li>
 
-                    <li className="flex gap-3">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>Key principles of data privacy and security</span>  
                     </li>
 
-                    <li className="flex gap-3">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>Legal obligations for businesses and organizations</span>  
                     </li>
 
-                    <li className="flex gap-3">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>How to develop a data protection compliance framework</span>  
                     </li>
 
-                    <li className="flex gap-3">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>Best practices for handling personal data</span>  
                     </li>
 
-                    <li className="flex gap-3">
+                    <li className="gap-3 hidden lg:flex">
                       <SquareCheckBig />
                       <span>Real-world case studies and interactive Q&A</span>
                     </li>
