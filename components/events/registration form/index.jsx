@@ -8,8 +8,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
-import AlertTitle from '@mui/material/AlertTitle';
-import Alert from '@mui/material/Alert';
+import './style.scss'
 
 const RegistrationForm = ({ registrationDetails, setEvent }) => {
   const [loading, setLoading] = useState(false);
@@ -92,11 +91,15 @@ const RegistrationForm = ({ registrationDetails, setEvent }) => {
       .then(
         () => {
           setSuccess(true)
-          setLoading(false);
+          setTimeout(() => {
+            closeModal();
+          }, 8000);
         },
         () => {
-          setFailed(true)
-          setLoading(false);
+          setFailed(true);
+          setTimeout(() => {
+            closeModal();
+          }, 8000);
         }
       );
   };
@@ -252,32 +255,30 @@ const RegistrationForm = ({ registrationDetails, setEvent }) => {
           </form>
         </div>
       </div>
-      {!success && (
-        <div className='absolute flex-center top-0 left-0 w-screen h-screen bg-black/30 p-4 z-[2] cursor-auto'>
-          <div className='relative flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-[#edf7ed] px-10 py-20 text-[#2c522e] rounded-md shadow-2xl text-center'>          
-            <button className='absolute top-0 right-0 p-2 mx-4 my-2' onClick={closeModal}>
-              <X color="#2c522e" size={30} strokeWidth={2} />
-            </button>
+      {success && (
+        <div className='absolute flex-center top-0 left-0 w-screen p-4 h-screen z-[2] cursor-auto'>
+          <button className='absolute top-0 left-0 w-screen h-screen bg-black/30 p-4 z-0 cursor-auto' onClick={closeModal} />
+          <div className='relative overflow-hidden flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-[#edf7ed] px-10 py-20 text-[#2c522e] rounded-md shadow-2xl text-center'>                      
             <CircleCheckBig color="#2c522e" strokeWidth={3} size={100} />
-            <div className=' flex flex-col'>
+            <div className='p-4 flex flex-col'>
               <h2 className='text-4xl font-extrabold mb-3'>Registration successful!</h2>
               <span>Check your email for next steps.</span>
             </div>
+            <div className="absolute top-0 left-0 h-1 rounded-tl-lg bg-green-500 progress-bar w-full" />
           </div>
         </div>
       )}
 
-      {failed && (
-        <div className='absolute flex-center top-0 left-0 w-screen h-screen bg-black/30 p-4 z-[2] cursor-auto'>
-          <div className='relative flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-red-100 px-10 py-20 text-red-700 rounded-md shadow-2xl text-center'>          
-            <button className='absolute top-0 right-0 p-2 mx-4 my-2' onClick={closeModal}>
-              <X color="#b91c1c" size={30} strokeWidth={2} />
-            </button>
+      {!failed && (
+        <div className='absolute flex-center top-0 left-0 w-screen h-screen p-4 z-[2] cursor-auto'>
+          <button className='absolute top-0 left-0 w-screen h-screen bg-black/30 p-4 z-0 cursor-auto' onClick={closeModal} />
+          <div className='relative overflow-hidden flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-red-100 px-10 py-20 text-red-700 rounded-md shadow-2xl text-center'>          
             <TriangleAlert color="#dc2626" strokeWidth={3} size={100} />
             <div className=' flex flex-col'>
               <h2 className='text-4xl font-extrabold mb-3'>Something went wrong.</h2>
               <span>Please try again.</span>
             </div>
+            <div className="absolute top-0 left-0 h-1 rounded-tl-lg bg-red-500 progress-bar w-full" />
           </div>
         </div>
       )}
