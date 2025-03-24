@@ -17,7 +17,7 @@ import course10 from "@/public/backgrounds/course-10.png";
 import { CircleChevronLeft, CircleChevronRight } from 'lucide-react';
 import { useRef } from 'react';
 
-const ShortCourses = () => {
+const ShortCourses = ({setEvent}) => {
 	const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -105,7 +105,16 @@ const ShortCourses = () => {
 										<div className="card__header-text flex gap-5">
 												<h3 className="card__title">{course.title}</h3>            
 												<div className='flex justify-between items-center'>
-													<a href='/contact-us' className="card__status px-2 py-1 border-2 border-white rounded-xl cursor-pointer">Enroll</a>												
+													<button 
+														onClick={() => {setEvent({
+															eventImage: course.image,
+															eventName: course.name
+														})
+														}}
+														className="card__status px-2 py-1 border-2 border-white rounded-xl cursor-pointer"
+													>
+														Enroll
+													</button>
 												</div>
 										</div>
 										</div>

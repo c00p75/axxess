@@ -169,12 +169,12 @@ const Events = ({setEvent}) => {
                     <li className="flex justify-center mt-10 md:mt-5 2xl:mt-10">
                       <h2 className='text-2xl'>
                         <button
-                        onClick={() => {handleSelectEvent(data_protection, 'Masterclass in Data Protection Law')}}
-                        className="bg-[#75471c] text-white text-center px-5 py-2 border-2 rounded-full">
+                          onClick={() => {handleSelectEvent(data_protection, 'Masterclass in Data Protection Law')}}
+                          className="bg-[#75471c] text-white text-center px-5 py-2 border-2 rounded-full"
+                        >
                           Register
                         </button>     
-                      </h2>  
-                                        
+                      </h2>               
                     </li>
                   </ul>                
                 </div>            
@@ -249,7 +249,7 @@ const Events = ({setEvent}) => {
             </div> 
           </div>
         </section>          
-        <ShortCourses />     
+        <ShortCourses setEvent={setEvent} />     
         <Footer />    
         
       </div>
