@@ -85,10 +85,10 @@ const RegistrationForm = () => {
 
     emailjs
       .send(
-        'service_9epyqvj',
-        'template_x71hm3d',
+        'service_zggzve4',
+        'template_88go7xa',
         emailParams,
-        'Sp3HYboSpdIR0QH0x'
+        'xyyTpx2P0EcwJw0mG'
       )
       .then(
         () => {
