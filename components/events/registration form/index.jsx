@@ -124,7 +124,7 @@ const RegistrationForm = () => {
 
           <form onSubmit={sendEmail} className='px-4 md:px-0 md:mt-10 lg:mt-0'>
             <div className="flex flex-wrap -mx-3 mb-6 gap-10 md:gap-0 mt-10 md:mt-5">              
-              <div className="w-full md:w-1/2 px-3 md:mb-0">
+              <div className="w-full md:w-1/2 px-3 -mb-1 md:mb-0">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Organization
                 </label>
@@ -205,7 +205,7 @@ const RegistrationForm = () => {
                 </div>
               </div>
               <div className="w-full md:w-1/2 px-3">
-                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2" for="last-name">
+                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-6 md:mb-2" for="last-name">
                   Location
                 </label>
                 <input 
@@ -249,7 +249,7 @@ const RegistrationForm = () => {
             </div>            
             <button
               type="submit"
-              className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full mb-5 md:mb-0"
+              className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full mb-14 md:mb-0"
               disabled={loading}  
             >
               {loading ? 'Submitting...' : 'Submit'}
