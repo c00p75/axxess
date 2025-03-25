@@ -59,7 +59,7 @@ const RegistrationForm = () => {
 
   const allowedDates = [
     dayjs('2025-04-04', 'YYYY-MM-DD'),
-    dayjs('2025-05-04', 'YYYY-MM-DD'),
+    dayjs('2025-04-11', 'YYYY-MM-DD'),
   ];
 
   const shouldDisableDate = (date) => {
