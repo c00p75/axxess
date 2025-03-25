@@ -263,7 +263,7 @@ const RegistrationForm = () => {
           <div className='relative overflow-hidden flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-[#edf7ed] px-10 py-20 text-[#2c522e] rounded-md shadow-2xl text-center'>                      
             <CircleCheckBig color="#2c522e" strokeWidth={3} size={100} />
             <div className='p-4 flex flex-col'>
-              <h2 className='text-4xl font-extrabold mb-3'>Registration successful!</h2>
+              <h2 className='text-3xl font-extrabold mb-3'>Registration successful!</h2>
               <span>Check your email for next steps.</span>
             </div>
             <div className="absolute top-0 left-0 h-1 rounded-tl-lg bg-green-500 progress-bar w-full" />
@@ -271,13 +271,13 @@ const RegistrationForm = () => {
         </div>
       )}
 
-      {failed && (
+      {!failed && (
         <div className='absolute flex-center top-0 left-0 w-screen h-screen p-4 z-[2] cursor-auto'>
           <button className='absolute top-0 left-0 w-screen h-screen bg-black/30 p-4 z-0 cursor-auto' onClick={closeModal} />
           <div className='relative overflow-hidden flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-red-100 px-10 py-20 text-red-700 rounded-md shadow-2xl text-center'>          
             <TriangleAlert color="#dc2626" strokeWidth={3} size={100} />
             <div className=' flex flex-col'>
-              <h2 className='text-4xl font-extrabold mb-3'>Something went wrong.</h2>
+              <h2 className='text-3xl font-extrabold mb-3'>Something went wrong.</h2>
               <span>Please try again.</span>
             </div>
             <div className="absolute top-0 left-0 h-1 rounded-tl-lg bg-red-500 progress-bar w-full" />
