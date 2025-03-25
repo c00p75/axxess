@@ -2,6 +2,7 @@ import "./globals.css";
 import RootLayoutClient from "./RootLayoutClient";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import LoadingSrceen from "@/components/loading screen";
 
 export const metadata = {
   title: "Axxess Corporate",
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <Navbar />  
         <RootLayoutClient>{children}</RootLayoutClient>
-        <Footer />      
+        <Footer />     
+        {/* <LoadingSrceen />  */}
       </body>
     </html>
   );
