@@ -4,11 +4,11 @@ import { CircleCheckBig, SquareX, TriangleAlert, X } from 'lucide-react'
 import Image from 'next/image'
 import React, { useContext, useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { AppContext } from "@/app/RootLayoutClient";
-import dayjs from 'dayjs';
+// import dayjs from 'dayjs';
 import './style.scss'
 
 const RegistrationForm = () => {
@@ -16,7 +16,7 @@ const RegistrationForm = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [failed, setFailed] = useState(false)
-  const [message, setMessage] = useState('');
+  // const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     event: registrationDetails.eventName || '',
     company: '',
@@ -27,7 +27,7 @@ const RegistrationForm = () => {
     email: '',
     phone: '',
     amount: 'K2000',
-    eventDate: dayjs('2025-04-04', 'YYYY-MM-DD'),
+    eventDate: '4th April 2025',
   })
 
   useEffect(() => {
@@ -40,31 +40,31 @@ const RegistrationForm = () => {
     setRegistrationDetails({ eventImage: '', eventName: '' })
   }
 
-  const handleDateChange = (date) => {
-    setFormData({ ...formData, eventDate: date });
-  };
+  // const handleDateChange = (date) => {
+  //   setFormData({ ...formData, eventDate: date });
+  // };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const getOrdinalSuffix = (day) => {
-    const j = day % 10;
-    const k = day % 100;
-    if (j === 1 && k !== 11) { return 'st'; }
-    if (j === 2 && k !== 12) { return 'nd'; }
-    if (j === 3 && k !== 13) { return 'rd'; }
-    return 'th';
-  };
+  // const getOrdinalSuffix = (day) => {
+  //   const j = day % 10;
+  //   const k = day % 100;
+  //   if (j === 1 && k !== 11) { return 'st'; }
+  //   if (j === 2 && k !== 12) { return 'nd'; }
+  //   if (j === 3 && k !== 13) { return 'rd'; }
+  //   return 'th';
+  // };
 
-  const allowedDates = [
-    dayjs('2025-04-04', 'YYYY-MM-DD'),
-    dayjs('2025-04-11', 'YYYY-MM-DD'),
-  ];
+  // const allowedDates = [
+  //   dayjs('2025-04-04', 'YYYY-MM-DD'),
+  //   dayjs('2025-04-11', 'YYYY-MM-DD'),
+  // ];
 
-  const shouldDisableDate = (date) => {
-    return !allowedDates.some((allowedDate) => date.isSame(allowedDate, 'day'));
-  };
+  // const shouldDisableDate = (date) => {
+  //   return !allowedDates.some((allowedDate) => date.isSame(allowedDate, 'day'));
+  // };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -78,10 +78,10 @@ const RegistrationForm = () => {
       company: formData.company,
       amount: formData.amount,
       event: formData.event,
-      eventDate: formData.eventDate 
-        ? dayjs(formData.eventDate).format('D') + getOrdinalSuffix(dayjs(formData.eventDate).date()) + ' ' + dayjs(formData.eventDate).format('MMMM YYYY') 
-        : 'Not Provided',
+      eventDate: formData.eventDate,
     };
+
+    // console.log(emailParams)
 
     emailjs
       .send(
@@ -136,9 +136,31 @@ const RegistrationForm = () => {
                 />
               </div>
 
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2" for="date">
                   Event Date
+                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
+                </label>
+                <div class="relative">
+                  <select
+                    class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-[#75471c]"
+                    id="date"
+                    required
+                    onChange={handleChange}
+                  >
+                    {/* <option value="4th April 2025" disabled selected className='text-slate-300'></option> */}
+                    <option value="4th April 2025" selected>4th April 2025</option>
+                    <option value="11th April 2025">11th April 2025</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+                  
                   <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
                 </label>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -152,7 +174,7 @@ const RegistrationForm = () => {
                     className='bg-white'
                   />
                 </LocalizationProvider>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-wrap -mx-3 mb-6">
