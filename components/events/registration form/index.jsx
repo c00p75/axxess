@@ -119,12 +119,12 @@ const RegistrationForm = () => {
             <Image src={registrationDetails.eventImage} alt="Axxess" className="object-contain w-full h-full" />
           </div>
         )}
-        <div className="py-8 md:px-8 md:py w-full lg:w-1/2 h-[100vh] overflow-scroll">
+        <div className="py-8 md:px-8 md:py w-full lg:w-1/2 min-h-[100vh]">
           <h1 className="text-4xl font-semibold mb-4">Registration Form</h1>
 
-          <form onSubmit={sendEmail} className='px-8 md:px-0 md:mt-10 lg:mt-0'>
+          <form onSubmit={sendEmail} className='px-4 md:px-0 md:mt-10 lg:mt-0'>
             <div className="flex flex-wrap -mx-3 mb-6 gap-10 md:gap-0 mt-10 md:mt-5">              
-              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <div className="w-full md:w-1/2 px-3 md:mb-0">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Organization
                 </label>
@@ -217,7 +217,7 @@ const RegistrationForm = () => {
             </div>
 
             <div className="flex flex-wrap -mx-3 mb-6">
-              <div className="w-full md:w-1/2 px-3">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
                   Email
                   <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
@@ -249,7 +249,7 @@ const RegistrationForm = () => {
             </div>            
             <button
               type="submit"
-              className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full"
+              className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full mb-5 md:mb-0"
               disabled={loading}  
             >
               {loading ? 'Submitting...' : 'Submit'}
