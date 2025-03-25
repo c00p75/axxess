@@ -27,7 +27,7 @@ const RegistrationForm = () => {
     email: '',
     phone: '',
     amount: 'K2000',
-    eventDate: dayjs('2025-04-04', 'YYYY-MM-DD'),
+    eventDate: dayjs('04-04-2025', 'DD-MM-YYYY'),
   })
 
   useEffect(() => {
@@ -58,8 +58,8 @@ const RegistrationForm = () => {
   };
 
   const allowedDates = [
-    dayjs('2025-04-04', 'YYYY-MM-DD'),
-    dayjs('2025-04-11', 'YYYY-MM-DD'),
+    dayjs('04-04-2025', 'DD-MM-YYYY'),
+    dayjs('11-04-2025', 'DD-MM-YYYY'),
   ];
 
   const shouldDisableDate = (date) => {
@@ -145,9 +145,9 @@ const RegistrationForm = () => {
                   <DatePicker
                     value={formData.eventDate}
                     onChange={handleDateChange}
-                    format="YYYY-MM-DD"
+                    format="DD-MM-YYYY"
                     shouldDisableDate={shouldDisableDate}
-                    defaultValue={dayjs('2025-04-04')}
+                    defaultValue={dayjs('04-04-2025')}
                     slotProps={{ textField: { fullWidth: true, variant: "outlined" } }}
                     className='bg-white'
                   />
