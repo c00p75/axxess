@@ -271,7 +271,7 @@ const RegistrationForm = () => {
         </div>
       )}
 
-      {!failed && (
+      {failed && (
         <div className='absolute flex-center top-0 left-0 w-screen h-screen p-4 z-[2] cursor-auto'>
           <button className='absolute top-0 left-0 w-screen h-screen bg-black/30 p-4 z-0 cursor-auto' onClick={closeModal} />
           <div className='relative overflow-hidden flex flex-col md:flex-row justify-center items-center gap-5 h-fit bg-red-100 px-10 py-20 text-red-700 rounded-md shadow-2xl text-center'>          
