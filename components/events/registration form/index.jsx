@@ -76,34 +76,36 @@ const RegistrationForm = () => {
       email: formData.email,
       phone: formData.phone,
       company: formData.company,
+      location: formData.location,
+      gender: formData.gender,
       amount: formData.amount,
       event: formData.event,
       eventDate: formData.eventDate,
     };
 
-    // console.log(emailParams)
+    console.log(emailParams)
 
-    emailjs
-      .send(
-        'service_zggzve4',
-        'template_88go7xa',
-        emailParams,
-        'xyyTpx2P0EcwJw0mG'
-      )
-      .then(
-        () => {
-          setSuccess(true)
-          setTimeout(() => {
-            closeModal();
-          }, 8000);
-        },
-        () => {
-          setFailed(true);
-          setTimeout(() => {
-            closeModal();
-          }, 8000);
-        }
-      );
+    // emailjs
+    //   .send(
+    //     'service_zggzve4',
+    //     'template_88go7xa',
+    //     emailParams,
+    //     'xyyTpx2P0EcwJw0mG'
+    //   )
+    //   .then(
+    //     () => {
+    //       setSuccess(true)
+    //       setTimeout(() => {
+    //         closeModal();
+    //       }, 8000);
+    //     },
+    //     () => {
+    //       setFailed(true);
+    //       setTimeout(() => {
+    //         closeModal();
+    //       }, 8000);
+    //     }
+    //   );
   };
 
   return (

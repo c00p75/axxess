@@ -1,3 +1,48 @@
 #loading-screen {
   background: radial-gradient(#75471c, #2d1a09);
+  transition: opacity ease-in-out 0.3s;
+
+  @keyframes image-shadow {
+    0% {
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.1));
+    }
+    10% {
+        filter: drop-shadow(10px 20px 15px rgba(0, 0, 0, 0.3));
+    }
+    20% {
+        filter: drop-shadow(35px 25px 15px rgba(0, 0, 0, 0.6));
+    }
+    30% {
+        filter: drop-shadow(35px 30px 15px rgba(0, 0, 0, 0.9));
+        transform: rotate(0.5deg);
+    }
+    40% {
+        filter: drop-shadow(30px 40px 15px rgba(0, 0, 0, 0.9));
+    }
+    50% {
+        filter: drop-shadow(10px 45px 15px rgba(0, 0, 0, 0.9));        
+    }
+    60% {
+        filter: drop-shadow(-10px 45px 15px rgba(0, 0, 0, 0.9));        
+    }
+    70% {
+        filter: drop-shadow(-45px 40px 15px rgba(0, 0, 0, 0.9));
+        transform: rotate(-0.5deg);
+    }
+    80% {
+        filter: drop-shadow(-45px 30px 15px rgba(0, 0, 0, 0.6));        
+    }
+    90% {
+        filter: drop-shadow(-30px 10px 15px rgba(0, 0, 0, 0.3));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.1));
+    }
+}
+
+.image-shadow {
+    animation: image-shadow 15s linear infinite;
+    animation-delay: 0.5s;
+    transform-origin: center;
+}
 }

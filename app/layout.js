@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Navbar />  
         <RootLayoutClient>{children}</RootLayoutClient>
         <Footer />     
-        {/* <LoadingSrceen />  */}
+        <LoadingSrceen /> 
       </body>
     </html>
   );
