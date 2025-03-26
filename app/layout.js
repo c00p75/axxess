@@ -14,10 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
+        <LoadingSrceen /> 
         <Navbar />  
         <RootLayoutClient>{children}</RootLayoutClient>
-        <Footer />     
-        <LoadingSrceen /> 
+        <Footer />             
       </body>
     </html>
   );

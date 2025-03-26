@@ -1,6 +1,7 @@
 #loading-screen {
   background: radial-gradient(#75471c, #2d1a09);
   transition: opacity ease-in-out 0.3s;
+  overflow: hidden;
 
   @keyframes image-shadow {
     0% {
