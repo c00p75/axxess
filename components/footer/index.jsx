@@ -2,6 +2,7 @@ import "./style.scss";
 import footerLogo from "@/public/logos/Axxess-Corporate-Consulting-Limited-Logos-8.png";
 import Image from "next/image";
 import { Facebook, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -42,6 +43,14 @@ const Footer = () => {
           <p>+260 977 788 466</p>
           <p>axxesscorporate@gmail.com</p>
         </div>
+      </div>
+      <div className="flex flex-col justify-center items-center z-[2] relative text-white mt-14 gap-2">
+        <p className="text-[1rem] text-[#ece5de] font-extralight">
+          Designed & created by <Link href="https://www.balloinnovations.com/" className="font-semibold hover:underline">Ballo Innovations</Link>
+        </p>
+        <p>
+          ©2025 Axxess Corporate Consulting Limited. All Rights Reserved
+        </p>
       </div>
     </div>
   );
