@@ -39,56 +39,67 @@ const ShortCourses = ({ setEvent }) => {
       title: `Getting Your Board Ready`,
       description: `Equip your board with the knowledge and tools needed for effective governance, strategic decision-making, and compliance with best practices.`,
       image: course11,
+      dates: [],
     },
     // {
     //   title: `A Day in the Life of a Company Secretary`,
     //   description: `Equip your board with the knowledge and tools needed for effective governance, strategic decision-making, and compliance with best practices.`,
     //   image: course4,
+    // dates: [],
     // },
     {
       title: `Overview of Company Secretarial Practice`,
       description: `Gain a comprehensive understanding of company secretarial duties, regulatory compliance, and corporate governance principles.`,
       image: course8,
+      dates: [],
     },
     {
       title: `Etiquette and Grooming Standards`,
       description: `Master professional etiquette, appearance, and behavior to enhance your personal brand and workplace confidence.`,
       image: course10,
+      dates: [],
     },
     {
       title: `How to Prepare for a Board Meeting`,
       description: `Learn the key steps to organize a successful board meeting, from agenda setting to document preparation and stakeholder coordination.`,
       image: course7,
+      dates: [],
     },
     {
       title: `Running Efficient and Effective Meetings in the Workplace`,
       description: `Develop skills to structure, facilitate, and manage workplace meetings that drive productivity and results.`,
       image: course3,
+      dates: [],
     },
     {
       title: `How to Prepare for an Annual Meeting`,
       description: `Understand the legal and procedural requirements for annual meetings, including agenda setting, reporting, and stakeholder engagement.`,
       image: companyWriting,
+      dates: [],
     },
     {
       title: `How to Be Effective in Meetings `,
       description: `Enhance your participation, communication, and decision-making skills to contribute meaningfully in any meeting setting.`,
       image: course9,
+      dates: [],
     },
     {
       title: ` 	The Role of a Company Secretary`,
       description: `Explore the critical functions of a company secretary, including governance support, compliance, and board advisory responsibilities.`,
       image: course1,
+      dates: [],
     },
     {
       title: `Effective Workplace Writing`,
       description: `Improve your business writing skills to communicate clearly and professionally in emails, reports, and official documents.`,
       image: writing,
+      dates: [],
     },
     {
       title: `The Do’s and Don’ts of Minute Taking`,
       description: `Learn best practices for accurate, concise, and legally compliant minute-taking to capture key discussions and decisions.`,
       image: secretary,
+      dates: [],
     },
   ];
 
@@ -146,8 +157,10 @@ const ShortCourses = ({ setEvent }) => {
                           onClick={() => {
                             setRegistrationDetails({
                               eventImage: course.image,
+                              dates: [],
                               eventName: course.title,
                               eventDescription: course.description,
+                              availableDates: course.dates,
                               // defaultDate: '04-04-2025',
                               // allowedDates: ['04-04-2025', '04-05-2025']
                             });

@@ -89,27 +89,27 @@ const RegistrationForm = () => {
 
     console.log(emailParams);
 
-    // emailjs
-    //   .send(
-    //     'service_zggzve4',
-    //     'template_88go7xa',
-    //     emailParams,
-    //     'xyyTpx2P0EcwJw0mG'
-    //   )
-    //   .then(
-    //     () => {
-    //       setSuccess(true)
-    //       setTimeout(() => {
-    //         closeModal();
-    //       }, 8000);
-    //     },
-    //     () => {
-    //       setFailed(true);
-    //       setTimeout(() => {
-    //         closeModal();
-    //       }, 8000);
-    //     }
-    //   );
+    emailjs
+      .send(
+        "service_zggzve4",
+        "template_88go7xa",
+        emailParams,
+        "xyyTpx2P0EcwJw0mG"
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          setTimeout(() => {
+            closeModal();
+          }, 8000);
+        },
+        () => {
+          setFailed(true);
+          setTimeout(() => {
+            closeModal();
+          }, 8000);
+        }
+      );
   };
 
   return (
@@ -154,74 +154,76 @@ const RegistrationForm = () => {
           <h1 className="text-4xl font-semibold mb-4">Registration Form</h1>
 
           <form onSubmit={sendEmail} className="px-4 md:px-0 md:mt-10 lg:mt-0">
-            <div className="flex flex-wrap -mx-3 mb-6 gap-10 md:gap-0 mt-10 md:mt-5">
-              <div className="w-full md:w-1/2 px-3 -mb-1 md:mb-0">
-                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
-                  Organization
-                </label>
-                <input
-                  className="appearance-none block w-full text-black/70 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#75471c]"
-                  name="company"
-                  type="text"
-                  onChange={handleChange}
-                />
-              </div>
-
-              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2"
-                  for="date"
-                >
-                  Event Date
-                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">
-                    {"(Required)"}
-                  </span>
-                </label>
-                <div class="relative">
-                  <select
-                    class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-[#75471c]"
-                    id="date"
-                    required
+            {registrationDetails.availableDates.length > 0 && (
+              <div className="flex flex-wrap -mx-3 mb-6 gap-10 md:gap-0 mt-10 md:mt-5">
+                <div className="w-full md:w-1/2 px-3 -mb-1 md:mb-0">
+                  <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+                    Organization
+                  </label>
+                  <input
+                    className="appearance-none block w-full text-black/70 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#75471c]"
+                    name="company"
+                    type="text"
                     onChange={handleChange}
+                  />
+                </div>
+
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label
+                    className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2"
+                    for="date"
                   >
-                    {/* <option value="4th April 2025" disabled selected className='text-slate-300'></option> */}
-                    {/* <option value="4th April 2025" selected>
-                      4th April 2025
-                    </option> */}
-                    <option value="Next Available Start Date" selected>
-                      Next Available Start Date
-                    </option>
-                  </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg
-                      class="fill-current h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
+                    Event Date
+                    <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">
+                      {"(Required)"}
+                    </span>
+                  </label>
+                  <div class="relative">
+                    <select
+                      class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-[#75471c]"
+                      id="date"
+                      required
+                      onChange={handleChange}
                     >
-                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
+                      {/* <option value="4th April 2025" disabled selected className='text-slate-300'></option> */}
+                      {/* <option value="4th April 2025" selected>
+                        4th April 2025
+                      </option> */}
+                      <option value="Next Available Start Date" selected>
+                        Next Available Start Date
+                      </option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      <svg
+                        class="fill-current h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
-                  
-                  <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
-                </label>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    value={formData.eventDate}
-                    onChange={handleDateChange}
-                    format="YYYY-MM-DD"
-                    shouldDisableDate={shouldDisableDate}
-                    defaultValue={dayjs('2025-04-04')}
-                    slotProps={{ textField: { fullWidth: true, variant: "outlined" } }}
-                    className='bg-white'
-                  />
-                </LocalizationProvider>
-              </div> */}
-            </div>
+                {/* <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+                    
+                    <span className="text-[#75471c] mx-1 font-medium text-xs italic lowercase">{'(Required)'}</span>
+                  </label>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                      value={formData.eventDate}
+                      onChange={handleDateChange}
+                      format="YYYY-MM-DD"
+                      shouldDisableDate={shouldDisableDate}
+                      defaultValue={dayjs('2025-04-04')}
+                      slotProps={{ textField: { fullWidth: true, variant: "outlined" } }}
+                      className='bg-white'
+                    />
+                  </LocalizationProvider>
+                </div> */}
+              </div>
+            )}
 
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -344,6 +346,22 @@ const RegistrationForm = () => {
                 />
               </div>
             </div>
+
+            {registrationDetails.availableDates.length == 0 && (
+              <div className="flex flex-wrap -mx-3 mb-6 gap-10 md:gap-0 mt-10 md:mt-5">
+                <div className="w-full md:w-1/2 px-3 -mb-1 md:mb-0">
+                  <label className="block uppercase tracking-wide text-black/70 text-xs font-bold mb-2">
+                    Organization
+                  </label>
+                  <input
+                    className="appearance-none block w-full text-black/70 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-[#75471c]"
+                    name="company"
+                    type="text"
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+            )}
             <button
               type="submit"
               className="bg-[#75471c] hover:bg-[#58381b] text-white font-semibold rounded-md py-3 mt-5 px-4 w-full mb-14 md:mb-0"

@@ -15,6 +15,7 @@ export default function RootLayoutClient({ children }) {
     eventFee: "",
     defaultDate: "",
     allowedDates: null,
+    avalableDates: [],
   });
 
   return (
