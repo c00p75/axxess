@@ -51,20 +51,39 @@ h5 {
   line-height: normal;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-h4, h5 { font-size: 1.125rem; }
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4,
+h5 {
+  font-size: 1.125rem;
+}
 
-@media(width <= 768px) { 
+@media (width <= 768px) {
   body {
-    text-align: center;     
+    text-align: center;
   }
-  h1 { font-size: 2rem; margin-bottom: 0.5rem;}
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-  h4, h5 { font-size: 1.125rem; }
-} 
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4,
+  h5 {
+    font-size: 1.125rem;
+  }
+}
 
 .flex-center {
   display: flex;
@@ -72,7 +91,7 @@ h4, h5 { font-size: 1.125rem; }
   align-items: center;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   background-color: transparent;
   /* position: absolute; */
   right: 0;

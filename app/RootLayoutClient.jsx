@@ -8,25 +8,28 @@ import RegistrationForm from "@/components/events/registration form";
 export const AppContext = createContext();
 
 export default function RootLayoutClient({ children }) {
-  const [registrationDetails, setRegistrationDetails] = useState({ 
-    eventImage: null, 
-    eventName: '', 
-    defaultDate: '',
+  const [registrationDetails, setRegistrationDetails] = useState({
+    eventImage: null,
+    eventName: "",
+    eventDescription: "",
+    eventFee: "",
+    defaultDate: "",
     allowedDates: null,
   });
 
   return (
     <>
-      
-      <AppContext.Provider value={{ registrationDetails, setRegistrationDetails }}>
+      <AppContext.Provider
+        value={{ registrationDetails, setRegistrationDetails }}
+      >
         {children}
         {registrationDetails.eventName && (
-          <RegistrationForm 
-            setRegistrationDetails={setRegistrationDetails} 
-            registrationDetails={registrationDetails} 
+          <RegistrationForm
+            setRegistrationDetails={setRegistrationDetails}
+            registrationDetails={registrationDetails}
           />
         )}
-      </AppContext.Provider>        
+      </AppContext.Provider>
     </>
   );
 }
