@@ -85,7 +85,10 @@ export default function RootLayout({ children }) {
                 telephone: "+260977788466",
                 contactType: "Customer Service",
               },
-              sameAs: [],
+              sameAs: [
+                "https://zm.linkedin.com/company/axxess-corporate-secretaries-limited",
+                "https://m.facebook.com/100075765614639/",
+              ],
             }),
           }}
         />

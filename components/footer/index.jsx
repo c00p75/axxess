@@ -26,14 +26,22 @@ const Footer = () => {
 
         <div className="md:w-[22%] flex-1 flex flex-col items-center md:items-start gap-5">
           <h2>Our Social</h2>
-          <p className="flex items-center gap-2">
+          <a
+            href="https://zm.linkedin.com/company/axxess-corporate-secretaries-limited"
+            target="_blank"
+            className="flex items-center gap-2"
+          >
             <Linkedin strokeWidth={1} color="palegoldenrod" />
             <span className="pt-1">LinkedIn</span>
-          </p>
-          <p className="flex items-center gap-2">
+          </a>
+          <a
+            href="https://m.facebook.com/100075765614639"
+            target="_blank"
+            className="flex items-center gap-2"
+          >
             <Facebook color="palegoldenrod" strokeWidth={1} />
             <span className="py-1">Facebook</span>
-          </p>
+          </a>
         </div>
 
         <div className="md:w-[22%] flex-1 flex flex-col gap-5">
@@ -46,11 +54,15 @@ const Footer = () => {
       </div>
       <div className="flex flex-col justify-center items-center z-[2] relative text-white mt-14 gap-2">
         <p className="text-[1rem] text-[#ece5de] font-extralight">
-          Designed & created by <Link href="https://www.balloinnovations.com/" className="font-semibold hover:underline">Ballo Innovations</Link>
+          Designed & created by{" "}
+          <Link
+            href="https://www.balloinnovations.com/"
+            className="font-semibold hover:underline"
+          >
+            Ballo Innovations
+          </Link>
         </p>
-        <p>
-          ©2025 Axxess Corporate Consulting Limited. All Rights Reserved
-        </p>
+        <p>©2025 Axxess Corporate Consulting Limited. All Rights Reserved</p>
       </div>
     </div>
   );
