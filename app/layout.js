@@ -73,21 +73,22 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Axxess Corporate Consulting Limited",
               url: "https://www.axxesscorporate.com",
-              logo: "https://www.axxesscorporate.com/logos/Axxess-Corporate-Consulting-Limited-Logos-4.png",
+              logo: "/logos/Axxess-Corporate-Consulting-Limited-Logos-4.png",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "15 Medland Road Rhodespark",
+                streetAddress: "H8W4+VQ2, Lusaka",
                 addressLocality: "Lusaka",
                 addressCountry: "ZM",
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+260977788466",
+                telephone: "+260977740588",
                 contactType: "Customer Service",
               },
               sameAs: [
                 "https://zm.linkedin.com/company/axxess-corporate-secretaries-limited",
-                "https://m.facebook.com/100075765614639/",
+                "https://m.facebook.com/100075765614639",
+                "https://balloinnovations.com",
               ],
             }),
           }}
