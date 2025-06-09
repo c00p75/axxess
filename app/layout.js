@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
               },
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+260977740588",
+                telephone: "+260977788466",
                 contactType: "Customer Service",
               },
               sameAs: [
